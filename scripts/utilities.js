@@ -91,7 +91,7 @@ function buildLangToggleLink(linkId, path = location.pathname) {
  */
 async function fetchFarmsData() {
   try {
-    const res = await fetch('/data/farms.json');
+    const res = await fetch('data/farms.json');
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
     }

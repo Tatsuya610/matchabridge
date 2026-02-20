@@ -9,10 +9,10 @@ async function init(){
   // language toggle link
   const p = params();
   p.set('lang', lang === 'ja' ? 'en' : 'ja');
-  document.getElementById('ctaLang').href = `/farm.html?${p.toString()}`;
+  document.getElementById('ctaLang').href = `farm.html?${p.toString()}`;
   document.getElementById('ctaLang').textContent = (lang === 'ja') ? 'English' : '日本語';
 
-  const res = await fetch('/data/farms.json');
+  const res = await fetch('data/farms.json');
   const farms = await res.json();
   const farm = farms.find(f => f.id === id);
 

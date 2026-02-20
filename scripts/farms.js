@@ -51,8 +51,8 @@ function render(farms){
       </div>
 
       <div class="farm-actions">
-        <a class="btn primary" href="/farm.html?id=${encodeURIComponent(f.id)}">View Farm</a>
-        <a class="btn" href="/cafes.html#samples">Request Samples</a>
+        <a class="btn primary" href="farm.html?id=${encodeURIComponent(f.id)}">View Farm</a>
+        <a class="btn" href="cafes.html#samples">Request Samples</a>
       </div>
     </div>
   `).join('');
@@ -78,7 +78,7 @@ function applyFilters(){
 }
 
 async function init(){
-  const res = await fetch('/data/farms.json');
+  const res = await fetch('data/farms.json');
   FARMS = await res.json();
 
   ['regionFilter','useFilter','millingFilter','minScoreFilter']

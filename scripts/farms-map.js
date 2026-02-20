@@ -29,7 +29,7 @@ async function initMap() {
 
   // Load farms data
   try {
-    const res = await fetch('/data/farms.json');
+    const res = await fetch('data/farms.json');
     if (!res.ok) throw new Error('Failed to load farms data');
     farms = await res.json();
 
@@ -142,7 +142,7 @@ function showFarmDetails(farm) {
     ${videoHTML}
 
     <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid #eee;">
-      <a href="/farm.html?id=${farm.id}" class="cta-button">View Full Details →</a>
+      <a href="farm.html?id=${farm.id}" class="cta-button">View Full Details →</a>
     </div>
   `;
 

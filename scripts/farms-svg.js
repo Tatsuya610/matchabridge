@@ -44,7 +44,7 @@ async function loadJapanSvg() {
     return;
   }
 
-  const res = await fetch('/map-full.svg');
+  const res = await fetch('map-full.svg');
   if (!res.ok) {
     const error = `Failed to load Japan SVG map: ${res.status}`;
     console.error(error);
@@ -400,7 +400,7 @@ async function initFarmsMap() {
   }
 
   try {
-    const res = await fetch('/data/farms.json');
+    const res = await fetch('data/farms.json');
     if (!res.ok) throw new Error(`Failed to load farms data: ${res.status}`);
     farms = await res.json();
 
