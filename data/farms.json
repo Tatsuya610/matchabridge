@@ -1,0 +1,282 @@
+[
+  {
+    "id": "marukyu-koyamaen",
+    "status": "active",
+    "name": { "en": "Marukyu Koyamaen", "ja": "丸久小山園" },
+    "region": { "en": "Uji, Kyoto", "ja": "京都・宇治" },
+    "producer_type": "farm",
+    "producer_type_ja": "茶農家",
+    "prefecture_code": 26,
+    "lat": 34.897,
+    "lng": 135.876,
+    "founded_year": 1850,
+    "overview_en": "A traditional matcha producer in Uji with over 170 years of heritage. Known for shade-grown umami and stone-milled excellence.",
+    "overview_ja": "宇治の伝統的な抹茶生産農園。170年以上の歴史を持ち、被覆栽培による旨み深い抹茶と石臼挽きの技術で知られる。",
+    "tags": ["uji", "umami", "stone-milled", "ceremonial", "latte"],
+    "hero": {
+      "headline_en": "Uji tradition, shade-grown umami, stone-milled matcha for cafes",
+      "headline_ja": "宇治の伝統。被覆が生む旨み、石臼挽きのカフェ向け抹茶",
+      "cover_image": "/assets/farms/marukyu-koyamaen/cover.jpg"
+    },
+    "videos": [
+      { "title_en": "Producer Voice", "title_ja": "生産者の声", "type": "youtube", "src": "https://www.youtube.com/embed/XXXX" },
+      { "title_en": "Farm Walk", "title_ja": "茶園の様子", "type": "youtube", "src": "https://www.youtube.com/embed/YYYY" }
+    ],
+    "cultivation": {
+      "shading_days": 30,
+      "harvest_window_en": "First flush (Apr–May)",
+      "harvest_window_ja": "一番茶（4〜5月）",
+      "hand_harvest_pct": 60,
+      "cultivars": ["Yabukita", "Samidori"]
+    },
+    "processing": {
+      "steaming_seconds": "15–20",
+      "sorting_window_en": "1–2 weeks",
+      "sorting_window_ja": "1〜2週間",
+      "milling": "stone",
+      "milling_output_g_per_hour": 40,
+      "storage": "nitrogen + cold"
+    },
+    "tea_characteristics": ["Single Origin", "Stone-Milled", "Ceremonial Grade", "First Flush"],
+    "quality": {
+      "flavor_profile_en": ["umami-forward", "clean sweetness", "round finish"],
+      "flavor_profile_ja": ["旨み中心", "すっきりした甘み", "丸い余韻"],
+      "recommended_use_en": ["latte", "ceremonial", "dessert"],
+      "recommended_use_ja": ["抹茶ラテ", "薄茶提供", "デザート"],
+      "notes_en": "Stable green color in milk drinks and smooth mouthfeel; designed for cafe consistency.",
+      "notes_ja": "ミルクに合わせても緑が沈みにくく、口当たりは滑らか。カフェでの再現性重視。"
+    },
+    "traceability": {
+      "lot_example": "UJ-2026-1F-03",
+      "records_en": ["harvest window", "milling date", "pack date"],
+      "records_ja": ["収穫期間", "挽き日", "充填日"]
+    },
+    "products": [
+      { "name_en": "Premium Ceremonial Matcha", "name_ja": "上級薄茶用", "grade": "A", "size": "100g", "image": "/assets/products/marukyu-ceremonial.jpg" },
+      { "name_en": "Cafe-Grade Matcha", "name_ja": "カフェ向け抹茶", "grade": "B", "size": "1kg", "image": "/assets/products/marukyu-cafe.jpg" }
+    ],
+    "wholesale": {
+      "moq_kg": 2,
+      "lead_time_days": 14,
+      "skus": ["1kg", "100g"],
+      "inquiry_only": true
+    },
+    "transparency_score": {
+      "total": 88,
+      "traceability": 26,
+      "verification": 18,
+      "quality": 17,
+      "craft": 13,
+      "cafe_ready": 14
+    }
+  },
+
+  {
+    "id": "aiya-nishio",
+    "status": "active",
+    "name": { "en": "Aiya (Nishio)", "ja": "あいや（西尾）" },
+    "region": { "en": "Nishio, Aichi", "ja": "愛知・西尾" },
+    "producer_type": "farm",
+    "producer_type_ja": "茶農家",
+    "prefecture_code": 23,
+    "lat": 34.883,
+    "lng": 137.012,
+
+    "founded_year": 1945,
+    "overview_en": "A mid-scale matcha operation in Nishio with a focus on supply stability and balanced flavor profiles for high-volume cafe use.",
+    "overview_ja": "西尾の中規模抹茶農園。供給安定性とバランスの取れた風味をカフェ向けに提供することを重視。",
+    "tags": ["nishio", "balanced", "latte", "supply-stable"],
+    "hero": {
+      "headline_en": "Balanced sweetness and reliability for high-volume cafe menus",
+      "headline_ja": "バランスの良い甘みと供給安定性。高回転メニュー向け",
+      "cover_image": "/assets/farms/aiya-nishio/cover.jpg"
+    },
+    "videos": [
+      { "title_en": "Processing Overview", "title_ja": "加工工程", "type": "youtube", "src": "https://www.youtube.com/embed/AAAA" }
+    ],
+    "cultivation": {
+      "shading_days": 20,
+      "harvest_window_en": "Spring",
+      "harvest_window_ja": "春",
+      "hand_harvest_pct": 20,
+      "cultivars": ["Yabukita"]
+    },
+    "processing": {
+      "steaming_seconds": "15–20",
+      "sorting_window_en": "1–2 weeks",
+      "sorting_window_ja": "1〜2週間",
+      "milling": "stone/jet (varies by SKU)",
+      "milling_output_g_per_hour": 40,
+      "storage": "nitrogen + cold"
+    },
+    "tea_characteristics": ["Single Origin", "Balanced", "Latte-Friendly"],
+    "quality": {
+      "flavor_profile_en": ["balanced", "gentle sweetness", "easy-to-use"],
+      "flavor_profile_ja": ["バランス", "やさしい甘み", "扱いやすい"],
+      "recommended_use_en": ["latte", "ice drinks", "baking"],
+      "recommended_use_ja": ["抹茶ラテ", "アイスドリンク", "焼き菓子"],
+      "notes_en": "A versatile profile suited for consistent cafe recipes and seasonal menus.",
+      "notes_ja": "季節メニューにも合わせやすい、再現性の高い使い勝手。"
+    },
+    "traceability": {
+      "lot_example": "NS-2026-SP-11",
+      "records_en": ["harvest window", "pack date"],
+      "records_ja": ["収穫期間", "充填日"]
+    },
+    "products": [
+      { "name_en": "All-Purpose Matcha", "name_ja": "万能抹茶", "grade": "B", "size": "1kg", "image": "/assets/products/aiya-allpurpose.jpg" },
+      { "name_en": "Organic Latte Blend", "name_ja": "オーガニック抹茶ラテ", "grade": "C", "size": "500g", "image": "/assets/products/aiya-organic.jpg" }
+    ],
+    "wholesale": {
+      "moq_kg": 5,
+      "lead_time_days": 10,
+      "skus": ["1kg", "5kg"],
+      "inquiry_only": true
+    },
+    "transparency_score": {
+      "total": 82,
+      "traceability": 24,
+      "verification": 14,
+      "quality": 16,
+      "craft": 10,
+      "cafe_ready": 18
+    }
+  },
+
+  {
+    "id": "kirishima-tea",
+    "status": "active",
+    "name": { "en": "Kirishima Tea", "ja": "霧島茶" },
+    "region": { "en": "Kagoshima", "ja": "鹿児島" },
+    "producer_type": "farm",
+    "producer_type_ja": "茶農家",
+    "prefecture_code": 46,
+    "lat": 31.939,
+    "lng": 130.765,
+    "founded_year": 1920,
+    "overview_en": "A bold and aromatic matcha producer in Kagoshima's volcanic region. Specializes in rich flavor profiles for desserts and premium beverages.",
+    "overview_ja": "鹿児島の火山地帯で育つ力強い抹茶。デザートやプレミアム飲料向けの濃厚な風味が特徴。",
+    "tags": ["kagoshima", "bold", "roasty", "dessert"],
+    "hero": {
+      "headline_en": "Bold character and depth—great for desserts and signature drinks",
+      "headline_ja": "力強い風味と奥行き。デザートやシグネチャー向け",
+      "cover_image": "/assets/farms/kirishima-tea/cover.jpg"
+    },
+    "videos": [],
+    "cultivation": {
+      "shading_days": 20,
+      "harvest_window_en": "Spring",
+      "harvest_window_ja": "春",
+      "hand_harvest_pct": 30,
+      "cultivars": ["Yabukita"]
+    },
+    "processing": {
+      "steaming_seconds": "15–20",
+      "sorting_window_en": "1–2 weeks",
+      "sorting_window_ja": "1〜2週間",
+      "milling": "stone/jet (varies by SKU)",
+      "milling_output_g_per_hour": 40,
+      "storage": "nitrogen + cold"
+    },
+    "tea_characteristics": ["Single Origin", "Bold", "Dessert-Friendly", "Volcanic Region"],
+    "quality": {
+      "flavor_profile_en": ["bold", "deep", "pairs well with dairy"],
+      "flavor_profile_ja": ["力強い", "奥深い", "乳製品と相性良い"],
+      "recommended_use_en": ["dessert", "soft serve", "latte"],
+      "recommended_use_ja": ["デザート", "ソフトクリーム", "抹茶ラテ"],
+      "notes_en": "A deeper profile that holds its own in rich recipes and premium sweets.",
+      "notes_ja": "濃厚レシピでも存在感が出る、プレミアムスイーツ向け。"
+    },
+    "traceability": {
+      "lot_example": "KG-2026-SP-07",
+      "records_en": ["harvest window", "pack date"],
+      "records_ja": ["収穫期間", "充填日"]
+    },
+    "products": [
+      { "name_en": "Premium Thick Tea (Koicha)", "name_ja": "上級濃茶用", "grade": "A", "size": "100g", "image": "/assets/products/kirishima-koicha.jpg" }
+    ],
+    "wholesale": {
+      "moq_kg": 3,
+      "lead_time_days": 14,
+      "skus": ["1kg"],
+      "inquiry_only": true
+    },
+    "transparency_score": {
+      "total": 78,
+      "traceability": 22,
+      "verification": 12,
+      "quality": 15,
+      "craft": 11,
+      "cafe_ready": 18
+    }
+  },
+
+  {
+    "id": "fuji-matcha-works",
+    "status": "active",
+    "name": { "en": "Fuji Matcha Works", "ja": "富士抹茶ワークス" },
+    "region": { "en": "Shizuoka", "ja": "静岡" },
+    "producer_type": "farm",
+    "producer_type_ja": "茶農家",
+    "prefecture_code": 22,
+    "lat": 35.366,
+    "lng": 138.370,
+
+    "founded_year": 1980,
+    "overview_en": "A clean and light matcha producer in Shizuoka. Currently focusing on seasonal limited releases. (New orders temporarily unavailable)",
+    "overview_ja": "静岡産のクリーンで軽やかな抹茶。季節限定商品に注力中。（現在新規受注停止）",
+    "tags": ["shizuoka", "clean", "light", "seasonal"],
+    "hero": {
+      "headline_en": "Clean, light profile—ideal for seasonal menus",
+      "headline_ja": "クリーンで軽やか。季節メニューに合わせやすい",
+      "cover_image": "/assets/farms/fuji-matcha-works/cover.jpg"
+    },
+    "videos": [],
+    "cultivation": {
+      "shading_days": 20,
+      "harvest_window_en": "Spring",
+      "harvest_window_ja": "春",
+      "hand_harvest_pct": 20,
+      "cultivars": ["Yabukita"]
+    },
+    "processing": {
+      "steaming_seconds": "15–20",
+      "sorting_window_en": "1–2 weeks",
+      "sorting_window_ja": "1〜2週間",
+      "milling": "stone/jet (varies by SKU)",
+      "milling_output_g_per_hour": 40,
+      "storage": "nitrogen + cold"
+    },
+    "tea_characteristics": ["Single Origin", "Clean", "Light", "Seasonal"],
+    "quality": {
+      "flavor_profile_en": ["clean", "light", "refreshing finish"],
+      "flavor_profile_ja": ["クリーン", "軽やか", "爽やかな後味"],
+      "recommended_use_en": ["ice drinks", "seasonal specials"],
+      "recommended_use_ja": ["アイスドリンク", "季節限定"],
+      "notes_en": "Currently not accepting new orders from this farm. Contact us for alternatives.",
+      "notes_ja": "現在この農園からの新規受注は停止中です。代替案をご提案します。"
+    },
+    "traceability": {
+      "lot_example": "SZ-2026-SP-02",
+      "records_en": ["harvest window", "pack date"],
+      "records_ja": ["収穫期間", "充填日"]
+    },
+    "products": [
+      { "name_en": "Limited Edition Spring", "name_ja": "春の限定品", "grade": "B", "size": "50g", "image": "/assets/products/fuji-spring.jpg" }
+    ],
+    "wholesale": {
+      "moq_kg": 2,
+      "lead_time_days": 14,
+      "skus": ["1kg"],
+      "inquiry_only": true
+    },
+    "transparency_score": {
+      "total": 70,
+      "traceability": 20,
+      "verification": 10,
+      "quality": 14,
+      "craft": 10,
+      "cafe_ready": 16
+    }
+  }
+]

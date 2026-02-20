@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()" />
+  <meta name="robots" content="index, follow" />
+
+  <title>For Cafes | MatchaBack</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #ddd;
+      border-radius: 0;
+      font-size: 14px;
+      font-family: 'Noto Sans JP', sans-serif;
+      background: white;
+      transition: all 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #1a1a1a;
+      box-shadow: 0 0 0 2px rgba(26, 26, 26, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-submit {
+      background: #1a1a1a;
+      color: white;
+      padding: 14px 40px;
+      border: none;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    .form-submit:hover {
+      background: #333;
+    }
+
+    .form-submit:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #eee;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.04);
+    }
+
+    .card h3 {
+      font-size: 18px;
+      font-family: 'Crimson Text', serif;
+      font-weight: 400;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    .faq-item {
+      margin-bottom: 24px;
+    }
+
+    .faq-question {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+    }
+
+    .faq-answer {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.8;
+      margin-left: 16px;
+      border-left: 2px solid #ddd;
+      padding-left: 16px;
+    }
+
+    .hero-section-cafes {
+      background: linear-gradient(135deg, #f5f3f0 0%, #faf9f6 100%);
+      padding: 100px 40px;
+      text-align: center;
+    }
+
+    .hero-section-cafes h1 {
+      font-size: 48px;
+      font-family: 'Crimson Text', serif;
+      font-weight: 400;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .hero-section-cafes p {
+      font-size: 16px;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section-cafes {
+        padding: 60px 20px;
+      }
+
+      .hero-section-cafes h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">MatchaBack</a>
+
+      <div style="display:flex; align-items:center; gap:40px;">
+        <nav>
+          <a href="farms.html">Farms</a>
+          <a href="traceability.html">Traceability</a>
+          <a href="cafes.html">For Cafes</a>
+          <a href="index.html#story">Stories</a>
+          <a href="index.html#news">News</a>
+        </nav>
+
+        <div class="social-links">
+          <!-- TODO: Update with actual URLs when accounts are created -->
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" title="Follow on Instagram" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer" title="Follow on TikTok" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero-section-cafes">
+    <h1>Premium Matcha for Your Menu</h1>
+    <p>Direct-from-farm Japanese matcha with complete traceability, cafe-ready consistency, and backable flavor profiles. No middlemen, no compromises.</p>
+    <a href="wholesale-inquiry.html" class="hero-cta">Start Wholesale Inquiry</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="section">
+
+    <!-- Matcha Preparation Guide -->
+    <div style="margin-bottom: 60px;">
+      <h2 class="section-title">Matcha Preparation Guide</h2>
+      <div class="section-subtitle">How to serve matcha in your café</div>
+
+      <!-- Tab Navigation -->
+      <div style="display: flex; gap: 16px; border-bottom: 2px solid #eee; margin-top: 40px; overflow-x: auto;">
+        <button class="prep-tab active" data-tab="traditional" style="padding: 12px 24px; background: none; border: none; border-bottom: 3px solid #2d5016; cursor: pointer; font-weight: 600; font-size: 14px;">Traditional Matcha</button>
+        <button class="prep-tab" data-tab="latte" style="padding: 12px 24px; background: none; border: none; border-bottom: 3px solid transparent; cursor: pointer; font-weight: 600; font-size: 14px; color: #999;">Matcha Latte</button>
+        <button class="prep-tab" data-tab="smoothie" style="padding: 12px 24px; background: none; border: none; border-bottom: 3px solid transparent; cursor: pointer; font-weight: 600; font-size: 14px; color: #999;">Matcha Smoothie</button>
+        <button class="prep-tab" data-tab="dessert" style="padding: 12px 24px; background: none; border: none; border-bottom: 3px solid transparent; cursor: pointer; font-weight: 600; font-size: 14px; color: #999;">Matcha Dessert</button>
+      </div>
+
+      <!-- Traditional Matcha -->
+      <div class="prep-content active" id="traditional" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; align-items: start;">
+        <div style="background: #e8f5e9; padding: 24px; border-radius: 8px; min-height: 300px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 14px;">
+          [Video/Image: Traditional Matcha Whisk Technique]
+        </div>
+        <div>
+          <h3 style="font-size: 20px; margin-bottom: 16px;">Traditional Matcha</h3>
+          <p style="color: #666; margin-bottom: 16px; line-height: 1.8;">The authentic ceremonial preparation. Perfect for premium café experiences and customers seeking the traditional ritual.</p>
+          <div style="background: #faf9f6; padding: 16px; border-radius: 8px; margin-bottom: 20px;">
+            <strong style="display: block; margin-bottom: 8px;">Recommended Grade:</strong>
+            <span style="background: #2d5016; color: white; padding: 4px 12px; border-radius: 4px; font-size: 12px;">Ceremonial Grade A</span>
+          </div>
+          <strong style="display: block; margin-bottom: 12px;">Preparation Steps:</strong>
+          <ol style="margin-left: 20px; line-height: 2; color: #333;">
+            <li>Sift 1–2 tsp matcha powder into a bowl</li>
+            <li>Add 2–3 oz hot water (160–180°F / 70–80°C)</li>
+            <li>Whisk with a traditional bamboo whisk in an M shape</li>
+            <li>Whisk faster to create a light foam</li>
+            <li>Serve immediately in a ceramic bowl</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Matcha Latte -->
+      <div class="prep-content" id="latte" style="display: none; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; align-items: start;">
+        <div style="background: #e8f5e9; padding: 24px; border-radius: 8px; min-height: 300px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 14px;">
+          [Video/Image: Matcha Latte Preparation]
+        </div>
+        <div>
+          <h3 style="font-size: 20px; margin-bottom: 16px;">Matcha Latte</h3>
+          <p style="color: #666; margin-bottom: 16px; line-height: 1.8;">Smooth, accessible, and perfect for daily café service. Available in hot and iced versions.</p>
+          <div style="background: #faf9f6; padding: 16px; border-radius: 8px; margin-bottom: 20px;">
+            <strong style="display: block; margin-bottom: 8px;">Recommended Grade:</strong>
+            <span style="background: #2d5016; color: white; padding: 4px 12px; border-radius: 4px; font-size: 12px;">Café Grade B</span>
+          </div>
+          <div>
+            <strong style="display: block; margin-bottom: 12px;">Hot Matcha Latte:</strong>
+            <ol style="margin-left: 20px; line-height: 2; color: #333; margin-bottom: 24px;">
+              <li>Whisk ¾ tsp matcha + 2 oz hot water</li>
+              <li>Steam 8–10 oz milk to 150–160°F</li>
+              <li>Pour matcha into cup, add steamed milk</li>
+              <li>Top with 1 cm milk foam</li>
+            </ol>
+          </div>
+          <div>
+            <strong style="display: block; margin-bottom: 12px;">Iced Matcha Latte:</strong>
+            <ol style="margin-left: 20px; line-height: 2; color: #333;">
+              <li>Whisk ¾ tsp matcha + 2 oz hot water</li>
+              <li>Pour into serving cup over ice</li>
+              <li>Add 8–10 oz cold milk</li>
+              <li>Stir and serve</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Matcha Smoothie -->
+      <div class="prep-content" id="smoothie" style="display: none; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; align-items: start;">
+        <div style="background: #e8f5e9; padding: 24px; border-radius: 8px; min-height: 300px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 14px;">
+          [Video/Image: Matcha Smoothie Blend]
+        </div>
+        <div>
+          <h3 style="font-size: 20px; margin-bottom: 16px;">Matcha Smoothie</h3>
+          <p style="color: #666; margin-bottom: 16px; line-height: 1.8;">Vibrant, nutrient-dense, and seasonal. Mix & match with fruit for variety.</p>
+          <div style="background: #faf9f6; padding: 16px; border-radius: 8px; margin-bottom: 20px;">
+            <strong style="display: block; margin-bottom: 8px;">Recommended Grade:</strong>
+            <span style="background: #2d5016; color: white; padding: 4px 12px; border-radius: 4px; font-size: 12px;">Café Grade B</span>
+          </div>
+          <strong style="display: block; margin-bottom: 12px;">Base Recipe:</strong>
+          <ul style="margin-left: 20px; line-height: 2; color: #333; margin-bottom: 24px;">
+            <li>½ tsp matcha powder</li>
+            <li>½ cup Greek yogurt</li>
+            <li>1 cup milk (dairy or plant-based)</li>
+            <li>½ banana or 1 cup seasonal fruit</li>
+            <li>½ cup ice</li>
+            <li>1 tbsp honey or agave (optional)</li>
+          </ul>
+          <strong style="display: block; margin-bottom: 8px;">Seasonal Variations:</strong>
+          <ul style="margin-left: 20px; line-height: 1.8; color: #666; font-size: 13px;">
+            <li><strong>Spring:</strong> Mango + coconut milk</li>
+            <li><strong>Summer:</strong> Pineapple + lime</li>
+            <li><strong>Fall:</strong> Apple + cinnamon</li>
+            <li><strong>Winter:</strong> Blueberry + almond milk</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Matcha Dessert -->
+      <div class="prep-content" id="dessert" style="display: none; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; align-items: start;">
+        <div style="background: #e8f5e9; padding: 24px; border-radius: 8px; min-height: 300px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 14px;">
+          [Video/Image: Matcha Dessert Showcase]
+        </div>
+        <div>
+          <h3 style="font-size: 20px; margin-bottom: 16px;">Matcha Dessert</h3>
+          <p style="color: #666; margin-bottom: 16px; line-height: 1.8;">Deep, bold matcha complements rich, creamy desserts. Leverage your premium grade for menu differentiation.</p>
+          <div style="background: #faf9f6; padding: 16px; border-radius: 8px; margin-bottom: 20px;">
+            <strong style="display: block; margin-bottom: 8px;">Recommended Grade:</strong>
+            <span style="background: #2d5016; color: white; padding: 4px 12px; border-radius: 4px; font-size: 12px;">Premium Grade A or Bold Grade</span>
+          </div>
+          <strong style="display: block; margin-bottom: 12px;">Popular Pairings:</strong>
+          <ul style="margin-left: 20px; line-height: 2; color: #333;">
+            <li><strong>Matcha Cheesecake</strong> – Blend ½ tsp into filling</li>
+            <li><strong>Matcha Panna Cotta</strong> – Whisk into cream base</li>
+            <li><strong>Matcha Soft Serve</strong> – 1 tsp per quart of ice cream base</li>
+            <li><strong>Matcha Shortbread</strong> – ¾ tsp per recipe</li>
+            <li><strong>Matcha Tiramisu</strong> – Dust over layers + blend into mascarpone</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Partner With Us -->
+    <div style="margin-bottom: 60px;">
+      <h2 class="section-title">Why Partner With Us</h2>
+      <div class="section-subtitle">What sets MatchaBack apart</div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 40px;">
+        <div class="card">
+          <h3>🔗 100% Traceability</h3>
+          <p>Every lot is documented from harvest through packaging. Know exactly what you're serving and share that confidence with your customers.</p>
+        </div>
+
+        <div class="card">
+          <h3>🎥 Producer Verification</h3>
+          <p>On-site videos and producer stories—authentic proof of quality. Build deeper connections with the farmers behind your products.</p>
+        </div>
+
+        <div class="card">
+          <h3>❌ No Middlemen</h3>
+          <p>Order directly from partner farms at wholesale prices. Better economics, better quality, better relationships.</p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 24px;">
+        <div class="card">
+          <h3>🎯 Café-Ready Consistency</h3>
+          <p>Matcha selected specifically for your use case—latte, ceremonial, dessert, or ice drinks. Formulated for barista success.</p>
+        </div>
+
+        <div class="card">
+          <h3>🌏 Seasonal Selection</h3>
+          <p>Multiple partners across regions mean you can rotate flavors seasonally, feature limited releases, and always have backup supply.</p>
+        </div>
+
+        <div class="card">
+          <h3>📊 Transparency Scores</h3>
+          <p>Quantified trust metrics: traceability, verification, quality, craft, and cafe-readiness. See exactly what matters to your business.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wholesale Access -->
+    <div id="samples" style="margin-bottom: 60px; padding: 60px; background: #f5f5f5; border-radius: 2px;">
+      <h2 class="section-title">Wholesale Access</h2>
+      <div class="section-subtitle">Pricing and sample requests become visible after approval.</div>
+
+      <div class="wholesale-access-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 40px;">
+        <div class="card" style="margin-bottom: 0;">
+          <h3>Existing Customers</h3>
+          <p>Sign in to view wholesale pricing, request samples, and manage your orders.</p>
+          <a href="signin.html" class="form-submit" style="display: inline-block; margin-top: 16px;">Sign in</a>
+        </div>
+
+        <div class="card" style="margin-bottom: 0;">
+          <h3>New to Wholesale</h3>
+          <p>Tell us about your cafe and menu goals. We'll review and approve wholesale access.</p>
+          <a href="wholesale-inquiry.html" class="form-submit" style="display: inline-block; margin-top: 16px;">Start Inquiry</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Barista Training -->
+    <div style="margin-bottom: 60px; background: #f5f5f5; padding: 40px; border-radius: 2px;">
+      <h2 style="font-size: 28px; font-family: 'Crimson Text', serif; font-weight: 400; margin-bottom: 12px; letter-spacing: 2px;">
+        Barista Training & Support
+      </h2>
+      <p style="font-size: 12px; color: #999; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px;">
+        Build confidence with your team
+      </p>
+
+      <div>
+        <p style="font-size: 13px; color: #666; line-height: 1.8; margin-bottom: 16px;">
+          We provide:
+        </p>
+        <ul style="font-size: 13px; color: #666; line-height: 2; margin-left: 20px;">
+          <li>Technical specs and flavor profiles for each matcha</li>
+          <li>Video guides: whisking, steaming, cold prep techniques</li>
+          <li>Sample recipes for lattes, ceremonial, and signature drinks</li>
+          <li>Producer stories and harvest context to share with customers</li>
+          <li>Direct access to partner farms for questions</li>
+        </ul>
+        <p style="font-size: 13px; color: #666; line-height: 1.8; margin-top: 16px;">
+          Contact us to schedule a video training session for your team.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div style="margin-bottom: 60px;">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="section-subtitle">Common questions about ordering and quality</div>
+
+      <div style="margin-top: 40px; max-width: 800px;">
+        <div class="faq-item">
+          <div class="faq-question">Q: How long does shipping typically take?</div>
+          <div class="faq-answer">
+            A: Lead times vary by farm (10–14 days typical). Once your order is ready, we ship via expedited courier. International shipping available on request.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: What's the minimum order quantity?</div>
+          <div class="faq-answer">
+            A: Minimum order quantities (MOQ) range from 2–5 kg depending on the farm. Final details are shared after approval.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: Can I return or exchange matcha if we're not satisfied?</div>
+          <div class="faq-answer">
+            A: Yes. If you're not satisfied with quality or consistency within 14 days of delivery, we'll arrange a return or replacement. Contact us for details.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: Do you offer exclusive blends or private-label matcha?</div>
+          <div class="faq-answer">
+            A: Yes, custom blends and private labels are available for larger partners. Discuss your specific needs during the inquiry process.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: How is matcha stored to maintain freshness?</div>
+          <div class="faq-answer">
+            A: Our partner farms use nitrogen flushing and cold storage. We recommend keeping matcha in a cool, dark place or refrigerated once opened. Unopened packages stay fresh for 12+ months.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: Can I see lot-level traceability for my order?</div>
+          <div class="faq-answer">
+            A: Absolutely. Every order includes a certificate of traceability with harvest date, processing details, and pack date. Learn more on our <a href="traceability.html" style="color: #1a1a1a; text-decoration: underline;">Traceability page</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div style="text-align: center; padding: 80px 0;">
+      <h3 style="font-size: 32px; font-family: 'Crimson Text', serif; font-weight: 400; margin-bottom: 20px; letter-spacing: 2px;">
+        Ready to get started?
+      </h3>
+      <p style="font-size: 14px; color: #666; margin-bottom: 24px;">Start your wholesale inquiry or sign in if you are already approved.</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="wholesale-inquiry.html" class="hero-cta">Start Inquiry</a>
+        <a href="signin.html" class="hero-cta" style="background: transparent; color: #1a1a1a; border: 1px solid #1a1a1a;">Sign in</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>MatchaBack</h4>
+        <a href="#">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="footer-section">
+        <h4>For Cafes</h4>
+        <a href="signin.html">Sign in</a>
+        <a href="wholesale-inquiry.html">Wholesale Inquiry</a>
+        <a href="cafes.html">Barista Training</a>
+      </div>
+      <div class="footer-section">
+        <h4>Company</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Shipping Info</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 MatchaBack Inc. All rights reserved.<br>
+      <span style="color: #666;">Connecting cafes directly with Japanese tea farms.</span>
+    </div>
+  </footer>
+
+
+  <!-- Matcha Prep Tab Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = document.querySelectorAll('.prep-tab');
+      const contents = document.querySelectorAll('.prep-content');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const tabName = tab.dataset.tab;
+
+          // Remove active from all tabs and contents
+          tabs.forEach(t => {
+            t.style.borderBottom = '3px solid transparent';
+            t.style.color = '#999';
+          });
+          contents.forEach(c => c.style.display = 'none');
+
+          // Add active to clicked tab and corresponding content
+          tab.style.borderBottom = '3px solid #2d5016';
+          tab.style.color = '#1a1a1a';
+          const content = document.getElementById(tabName);
+          if (content) {
+            content.style.display = 'grid';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Node and npm
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Build outputs
+dist/
+build/
+
+# OS files
+Thumbs.db
+.DS_Store
+*.log
+
+# Local development
+*.temp
+local-config.json
+debug.html
+
+# Credentials and secrets
+secrets/
+credentials/
+.env.production
+
+# OS-specific files
+.bash_profile
+.bashrc
+
+# VSCode workspace settings (use .vscode/settings.json instead)
+.vscode/launch.json
+.vscode/extensions.json
+
+# MacOS specific
+.AppleDouble
+.LSOverride
+._*
+
+# Temporary files
+*.swp
+*.swo
+*~
+.~*

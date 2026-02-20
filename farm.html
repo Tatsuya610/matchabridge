@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()" />
+  <meta name="robots" content="index, follow" />
+
+  <title>Farm Details | MatchaBack</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Farm Page Specific Styles */
+    .banner {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      color: #856404;
+      padding: 16px 24px;
+      margin-bottom: 40px;
+      border-radius: 2px;
+      font-size: 14px;
+    }
+
+    .farm-detail-header {
+      position: relative;
+      padding: 80px 40px 40px;
+      background: linear-gradient(135deg, rgba(45, 80, 22, 0.1) 0%, rgba(74, 124, 41, 0.1) 100%);
+      text-align: center;
+    }
+
+    .farm-detail-header h1 {
+      font-size: 48px;
+      font-weight: 400;
+      font-family: 'Crimson Text', serif;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+
+    .farm-detail-header .region {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .farm-detail-header .headline {
+      font-size: 16px;
+      color: #333;
+      max-width: 800px;
+      margin: 20px auto;
+      line-height: 1.8;
+    }
+
+    .lang-toggle {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      padding: 8px 16px;
+      border: 1px solid #ddd;
+      background: white;
+      text-decoration: none;
+      color: #1a1a1a;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .lang-toggle:hover {
+      border-color: #1a1a1a;
+      background: #1a1a1a;
+      color: white;
+    }
+
+    .detail-section {
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-bottom: 1px solid #eee;
+    }
+
+    .detail-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-heading {
+      margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+      font-size: 28px;
+      font-weight: 400;
+      font-family: 'Crimson Text', serif;
+      margin-bottom: 4px;
+      letter-spacing: 2px;
+    }
+
+    .section-heading .sub {
+      font-size: 12px;
+      color: #999;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .sub {
+      font-size: 13px;
+      color: #999;
+      letter-spacing: 0.5px;
+    }
+
+    #farmVideos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      background: #f5f5f5;
+      margin-top: 12px;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .kpi-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .kpi-list div {
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .kpi-list b {
+      font-weight: 600;
+      display: inline-block;
+      min-width: 80px;
+    }
+
+    .tags-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .score-display {
+      background: #faf9f6;
+      border: 1px solid #eee;
+      padding: 40px;
+      border-radius: 2px;
+      margin-top: 20px;
+    }
+
+    .score-number {
+      font-size: 48px;
+      font-weight: 400;
+      font-family: 'Crimson Text', serif;
+      margin-bottom: 8px;
+    }
+
+    .score-breakdown {
+      font-size: 12px;
+      color: #666;
+      letter-spacing: 1px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .product-card {
+      background: #faf9f6;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 200px;
+      background: #e8f5e9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #999;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .product-info {
+      padding: 16px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #1a1a1a;
+    }
+
+    .product-details {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 1024px) {
+      .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      #farmVideos {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .farm-detail-header {
+        padding: 60px 20px 30px;
+      }
+
+      .farm-detail-header h1 {
+        font-size: 32px;
+      }
+
+      .lang-toggle {
+        position: static;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+
+      .detail-section {
+        padding: 40px 20px;
+      }
+
+      .section-heading h2 {
+        font-size: 22px;
+      }
+
+      #farmVideos {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">MatchaBack</a>
+
+      <div style="display:flex; align-items:center; gap:40px;">
+        <nav>
+          <a href="farms.html">Farms</a>
+          <a href="traceability.html">Traceability</a>
+          <a href="cafes.html">For Cafes</a>
+          <a href="index.html#story">Stories</a>
+          <a href="index.html#news">News</a>
+        </nav>
+
+        <div class="social-links">
+          <!-- TODO: Update with actual URLs when accounts are created -->
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" title="Follow on Instagram" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer" title="Follow on TikTok" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Farm Details -->
+  <div id="farmRoot">
+
+    <div id="farmBanner"></div>
+
+    <!-- Header Section -->
+    <div class="farm-detail-header">
+      <a href="#" class="lang-toggle" id="ctaLang">日本語</a>
+      <h1 id="farmName">Loading...</h1>
+      <div class="region" id="farmRegion">—</div>
+      <p class="headline" id="farmHeadline">—</p>
+    </div>
+
+    <!-- Section 1: Producer Voice & Videos -->
+    <section class="detail-section">
+      <div class="section-heading">
+        <h2 id="producerTitle">Producer Voice</h2>
+        <div class="sub" id="producerSub">Video verification & on-site stories</div>
+      </div>
+      <div id="farmVideos"></div>
+    </section>
+
+    <!-- Section 2: Cafe Performance -->
+    <section class="detail-section">
+      <div class="section-heading">
+        <h2 id="perfTitle">Cafe Performance</h2>
+        <div class="sub" id="perfSub">What matters behind the bar</div>
+      </div>
+      <div class="detail-grid">
+        <div>
+          <p id="farmNotes" style="line-height: 1.8; color: #333;"></p>
+          <div style="margin-top: 20px;">
+            <div class="sub" style="margin-bottom: 12px;" id="bestForLabel">Best for:</div>
+            <div id="farmBestFor" style="font-size: 14px; color: #333; line-height: 1.8;"></div>
+          </div>
+        </div>
+        <div>
+          <div class="kpi-list" id="farmKpis"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Farm Overview -->
+    <section class="detail-section">
+      <div class="section-heading">
+        <h2 id="overviewTitle">Farm Overview</h2>
+        <div class="sub" id="overviewSub">Cultivation & processing</div>
+      </div>
+      <div id="farmTags" class="tags-group"></div>
+    </section>
+
+    <!-- Section 4: Product Lineup -->
+    <section class="detail-section">
+      <div class="section-heading">
+        <h2 id="productsTitle">Product Lineup</h2>
+        <div class="sub" id="productsSub">Available products</div>
+      </div>
+      <div id="farmProducts" class="products-grid"></div>
+    </section>
+
+    <!-- Section 5: Traceability -->
+    <section class="detail-section">
+      <div class="section-heading">
+        <h2 id="traceTitle">Traceability</h2>
+        <div class="sub" id="traceSub">Lot-level documentation</div>
+      </div>
+      <div id="farmTrace" style="font-size: 13px; line-height: 1.8; color: #333;"></div>
+    </section>
+
+    <!-- Section 6: Transparency Score -->
+    <section class="detail-section">
+      <div class="section-heading">
+        <h2 id="scoreTitle">Transparency Score</h2>
+        <div class="sub" id="scoreSub">Quantified trust signals</div>
+      </div>
+      <div class="score-display">
+        <div class="score-number" id="farmScore">—</div>
+        <div class="score-breakdown" id="farmScoreBreakdown">Score coming soon.</div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="detail-section" style="text-align: center; padding-top: 80px; padding-bottom: 80px;">
+      <h3 style="font-size: 24px; font-family: 'Crimson Text', serif; font-weight: 400; margin-bottom: 24px; letter-spacing: 2px;">Ready to order?</h3>
+      <a href="cafes.html#samples" class="hero-cta" style="display: inline-block;">Request Samples</a>
+      <p style="margin-top: 24px; font-size: 13px; color: #999; letter-spacing: 1px;">Or contact us for custom inquiries →</p>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>MatchaBack</h4>
+        <a href="#">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="footer-section">
+        <h4>For Cafes</h4>
+        <a href="cafes.html">Wholesale Pricing</a>
+        <a href="cafes.html">Order</a>
+        <a href="#">Barista Training</a>
+      </div>
+      <div class="footer-section">
+        <h4>Company</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Shipping Info</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 MatchaBack Inc. All rights reserved.<br>
+      <span style="color: #666;">Connecting cafes directly with Japanese tea farms.</span>
+    </div>
+  </footer>
+
+  <!-- Farm Details Script -->
+  <script src="scripts/utilities.js"></script>
+  <script src="scripts/farm.js"></script>
+
+</body>
+</html>

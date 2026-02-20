@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()" />
+  <meta name="robots" content="index, follow" />
+
+  <title>MatchaBack | Farm-Direct Japanese Matcha</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- ✅ External CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">MatchaBack</a>
+
+      <div style="display:flex; align-items:center; gap:40px;">
+        <nav>
+          <a href="farms.html">Farms</a>
+          <a href="traceability.html">Traceability</a>
+          <a href="cafes.html">For Cafes</a>
+          <a href="#story">Stories</a>
+          <a href="#news">News</a>
+        </nav>
+
+        <div class="social-links">
+          <!-- TODO: Update with actual URLs when accounts are created -->
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" title="Follow on Instagram" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer" title="Follow on TikTok" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- Put your hero video file under /assets if you want -->
+    <video class="hero-bg" autoplay muted loop playsinline data-src="assets/matcha-hero-new.mp4"></video>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <h1>Farm-Direct<br>Japanese Matcha</h1>
+      <p>
+        Verified partner farms, lot-level traceability, and cafe-ready consistency —
+        premium matcha straight from the source.
+      </p>
+
+      <div class="hero-actions">
+        <a href="cafes.html#samples" class="hero-cta">Wholesale Access</a>
+        <a href="farms.html" class="hero-cta secondary">Explore Farms</a>
+      </div>
+
+      <div class="trust-row">
+        <div class="trust-item">
+          <b>Lot-Level Traceability</b>
+          Harvest window, packaging date, and documentation by partner.
+        </div>
+        <div class="trust-item">
+          <b>Farm Video Verification</b>
+          Producer voice and on-site footage you can share with customers.
+        </div>
+        <div class="trust-item">
+          <b>Cafe-Ready Consistency</b>
+          Guidance for latte texture, color stability, and recipes.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Stories Section -->
+  <section class="section" id="story">
+    <div class="section-title">Our Stories</div>
+    <div class="section-subtitle">The Craft Behind Every Cup</div>
+
+    <div class="story-grid">
+      <div class="story-card">
+        <div class="story-image">🌑</div>
+        <div class="story-content">
+          <h3>Shade Growing</h3>
+          <p>
+            Weeks before harvest, tea bushes are shielded from direct sunlight,
+            increasing chlorophyll and L-theanine — the source of matcha's umami and vibrant color.
+          </p>
+          <a href="#" class="story-link">Read More</a>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-image">🤲</div>
+        <div class="story-content">
+          <h3>Hand-Picking</h3>
+          <p>
+            Only the youngest tender leaves are selected by skilled pickers,
+            preserving sweetness and a clean finish.
+          </p>
+          <a href="#" class="story-link">Read More</a>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-image">♨️</div>
+        <div class="story-content">
+          <h3>Steaming</h3>
+          <p>
+            Within hours of harvest, leaves are steamed briefly to halt oxidation
+            and preserve the vivid emerald color.
+          </p>
+          <a href="#" class="story-link">Read More</a>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-image">⚙️</div>
+        <div class="story-content">
+          <h3>Stone Grinding</h3>
+          <p>
+            Tencha is ground between carved granite mills — producing small amounts per hour
+            and a uniquely smooth mouthfeel.
+          </p>
+          <a href="#" class="story-link">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Farms Section (now routes to dynamic farms.html) -->
+  <section class="section" id="farms">
+    <div class="section-title">Partner Farms</div>
+    <div class="section-subtitle">Explore active partners, profiles, and traceability</div>
+
+    <div class="story-grid">
+      <div class="story-card" onclick="location.href='farms.html'">
+        <div class="story-image">🍃</div>
+        <div class="story-content">
+          <h3>Browse Farms</h3>
+          <p>
+            Compare regions, flavor profiles, milling methods, and transparency scores —
+            all in one place.
+          </p>
+          <a href="farms.html" class="story-link">Explore Farms</a>
+        </div>
+      </div>
+
+      <div class="story-card" onclick="location.href='traceability.html'">
+        <div class="story-image">🧾</div>
+        <div class="story-content">
+          <h3>How Traceability Works</h3>
+          <p>
+            See the documentation model from farm to cup, including example lot codes and records.
+          </p>
+          <a href="traceability.html" class="story-link">View Traceability</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="section" id="process">
+    <div class="section-title">The Craft</div>
+    <div class="section-subtitle">Why Matcha Takes So Much Care</div>
+
+    <div class="process-timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot">1</div>
+        <div class="timeline-content">
+          <h4>Shade Covering (20+ days)</h4>
+          <p>Tea bushes are covered to reduce sunlight, encouraging chlorophyll and L-theanine production.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">2</div>
+        <div class="timeline-content">
+          <h4>Hand Harvest (Early Spring)</h4>
+          <p>Only the first flush leaves are selected for higher sweetness and lower bitterness.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">3</div>
+        <div class="timeline-content">
+          <h4>Steaming & Drying (Same Day)</h4>
+          <p>Short steaming and careful drying preserve color, aroma, and freshness.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">4</div>
+        <div class="timeline-content">
+          <h4>Sorting & Deveining (1–2 weeks)</h4>
+          <p>Stems and veins are removed to produce tencha, determining final grade and smoothness.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">5</div>
+        <div class="timeline-content">
+          <h4>Stone Grinding (Year-Round)</h4>
+          <p>Granite mills rotate at controlled speeds to protect aroma and texture.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">6</div>
+        <div class="timeline-content">
+          <h4>Quality Assurance (Ongoing)</h4>
+          <p>Color, aroma, and taste are evaluated; matcha is stored cold with protective packaging.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section class="section" id="news">
+    <div class="section-title">News</div>
+    <div class="section-subtitle">Latest Updates</div>
+
+    <div class="topics-list">
+      <div class="topic-item">
+        <div class="topic-date">2026.02.17</div>
+        <div class="topic-title">
+          <a href="#">Private Preview Launch — MatchaBack Introduces Farm-Direct Matcha for Cafes</a>
+        </div>
+      </div>
+      <div class="topic-item">
+        <div class="topic-date">2026.02.15</div>
+        <div class="topic-title">
+          <a href="#">New at MatchaBack: Four Partner Farms Now Available</a>
+        </div>
+      </div>
+      <div class="topic-item">
+        <div class="topic-date">2026.02.10</div>
+        <div class="topic-title">
+          <a href="#">Traceability Model — Lot Records from Farm to Cup</a>
+        </div>
+      </div>
+      <div class="topic-item">
+        <div class="topic-date">2026.02.05</div>
+        <div class="topic-title">
+          <a href="#">Behind the Scenes: The Matcha Creation Process</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>MatchaBack</h4>
+        <a href="#">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="#">Blog</a>
+      </div>
+
+      <div class="footer-section">
+        <h4>For Cafes</h4>
+        <a href="cafes.html">Wholesale Pricing</a>
+        <a href="cafes.html#samples">Request Samples</a>
+        <a href="#">Barista Training</a>
+      </div>
+
+      <div class="footer-section">
+        <h4>Company</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Shipping Info</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 MatchaBack Inc. All rights reserved.<br>
+      <span style="color:#666;">Connecting cafes directly with Japanese tea farms.</span>
+    </div>
+  </footer>
+
+  <script>
+    // ===== VIDEO PLAYBACK =====
+    const heroVideo = document.querySelector('.hero-bg');
+    if (heroVideo && heroVideo.dataset.src) {
+      heroVideo.src = heroVideo.dataset.src;
+    }
+
+    // ===== SMOOTH SCROLL (only for # anchors) =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!/^#[a-zA-Z0-9_-]+$/.test(href)) return;
+        e.preventDefault();
+        const target = document.getElementById(href.substring(1));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+
+</body>
+</html>

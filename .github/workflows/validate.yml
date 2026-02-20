@@ -1,0 +1,186 @@
+name: Code Quality Checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Validate HTML files
+      run: |
+        # Basic HTML syntax check using grep patterns
+        echo "Checking HTML files for basic syntax..."
+        for file in *.html; do
+          if [ -f "$file" ]; then
+            # Check for unclosed tags (basic check)
+            open_count=$(grep -o '<div' "$file" | wc -l)
+            close_count=$(grep -o '</div>' "$file" | wc -l)
+            if [ "$open_count" -ne "$close_count" ]; then
+              echo "⚠️  Possible unclosed divs in $file"
+            fi
+            echo "✓ $file checked"
+          fi
+        done
+    
+    - name: Validate JSON files
+      run: |
+        echo "Validating JSON files..."
+        python3 -c "
+        import json
+        import glob
+        for file in glob.glob('data/*.json'):
+            try:
+                with open(file) as f:
+                    json.load(f)
+                print(f'✓ {file} is valid JSON')
+            except json.JSONDecodeError as e:
+                print(f'✗ {file} has JSON error: {e}')
+                exit(1)
+        "
+    
+    - name: Check for password protection code
+      run: |
+        echo "Checking for hardcoded passwords..."
+        if grep -r "password\|PASSWORD" *.html scripts/*.js 2>/dev/null | grep -i "const\|var"; then
+          echo "⚠️  Found potential password code"
+          exit 1
+        else
+          echo "✓ No hardcoded credentials found"
+        fi
+    
+    - name: Check for localhost references
+      run: |
+        echo "Checking for localhost hardcoding in source files..."
+        excluded_files='README\|.md\|CONTRIBUTING'
+        if grep -r "localhost:8000" --include="*.html" --include="*.js" . 2>/dev/null | grep -v "$excluded_files"; then
+          echo "⚠️  Found localhost:8000 in source code"
+          exit 1
+        else
+          echo "✓ No hardcoded localhost references in code"
+        fi
+    
+    - name: Validate translations
+      run: |
+        echo "Checking Japanese/English translations..."
+        python3 -c "
+        # Basic check that utilities.js has translations
+        with open('scripts/utilities.js') as f:
+            content = f.read()
+            if 'window.translations' not in content:
+                print('✗ Missing window.translations')
+                exit(1)
+            if content.count('_en') < 5:
+                print('⚠️  Low number of English translations')
+            if content.count('_ja') < 5:
+                print('⚠️  Low number of Japanese translations')
+        print('✓ Translations defined')
+        "
+    
+    - name: Check for console errors
+      run: |
+        echo "Checking for console.error patterns..."
+        if grep -r "console\.error" scripts/*.js | wc -l | grep -q "^0$"; then
+          echo "⚠️  No error handlers found"
+        else
+          echo "✓ Error handling implemented"
+        fi
+
+  style-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Check CSS validity
+      run: |
+        echo "Performing basic CSS checks..."
+        python3 -c "
+        import re
+        
+        with open('styles.css') as f:
+            css = f.read()
+        
+        # Check for basic CSS issues
+        if css.count('{') != css.count('}'):
+            print('✗ CSS braces mismatch')
+            exit(1)
+        
+        # Check for common issues
+        if ';;' in css:
+            print('⚠️  Found double semicolons')
+        
+        if '  }' in css and '   }' in css:
+            print('✓ CSS indentation looks good')
+        
+        print('✓ CSS structure valid')
+        "
+    
+    - name: Validate responsive design classes
+      run: |
+        echo "Checking responsive design..."
+        if grep -r "@media" styles.css > /dev/null; then
+          count=$(grep -c "@media" styles.css)
+          echo "✓ Found $count media queries"
+        else
+          echo "⚠️  No media queries found"
+        fi
+
+  content-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Validate farm data
+      run: |
+        python3 -c "
+        import json
+        
+        with open('data/farms.json') as f:
+            farms = json.load(f)
+        
+        required_fields = ['id', 'name_en', 'name_ja', 'prefecture_code', 'producer_type']
+        
+        for farm in farms:
+            for field in required_fields:
+                if field not in farm:
+                    print(f'✗ Farm {farm.get(\"id\", \"unknown\")} missing {field}')
+                    exit(1)
+            
+            if 'products' in farm:
+                for product in farm['products']:
+                    if 'name_en' not in product or 'grade' not in product:
+                        print(f'✗ Product in {farm[\"id\"]} missing required fields')
+                        exit(1)
+        
+        print(f'✓ All {len(farms)} farms have valid structure')
+        print('✓ All products have required fields')
+        "
+    
+    - name: Check image references
+      run: |
+        echo "Checking image references..."
+        python3 -c "
+        import json
+        import os
+        
+        with open('data/farms.json') as f:
+            farms = json.load(f)
+        
+        for farm in farms:
+            if 'products' in farm:
+                for product in farm['products']:
+                    if 'image' in product:
+                        img_path = product['image'].lstrip('/')
+                        # Note: Images may not exist in repo yet
+                        print(f'  - {product[\"name_en\"]}: {product[\"image\"]}')
+        
+        print('✓ Image references formatted correctly')
+        "

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()" />
+  <meta name="robots" content="index, follow" />
+
+  <title>Traceability | MatchaBack</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .trace-hero {
+      background: linear-gradient(135deg, #2d5016 0%, #4a7c29 100%);
+      color: white;
+      padding: 100px 40px;
+      text-align: center;
+    }
+
+    .trace-hero h1 {
+      font-size: 48px;
+      font-family: 'Crimson Text', serif;
+      font-weight: 400;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .trace-hero p {
+      font-size: 16px;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+
+    .trace-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin: 60px 0;
+    }
+
+    .trace-card {
+      background: white;
+      padding: 32px;
+      border: 1px solid #eee;
+      box-shadow: 0 2px 8px rgba(0,0,0,.04);
+      text-align: center;
+    }
+
+    .trace-card .icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .trace-card h3 {
+      font-size: 16px;
+      font-family: 'Crimson Text', serif;
+      font-weight: 400;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    .trace-card p {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    .trace-timeline {
+      position: relative;
+      margin: 60px 0;
+    }
+
+    .trace-step {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+      align-items: start;
+    }
+
+    .trace-step-number {
+      font-size: 48px;
+      font-family: 'Crimson Text', serif;
+      font-weight: 400;
+      color: #2d5016;
+      letter-spacing: 2px;
+    }
+
+    .trace-step-content h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    .trace-step-content p {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .trace-step-details {
+      background: #f5f5f5;
+      padding: 16px;
+      font-size: 12px;
+      color: #333;
+      line-height: 1.8;
+      border-radius: 2px;
+      margin-top: 16px;
+    }
+
+    .trace-example {
+      background: #faf9f6;
+      border: 2px dashed #ddd;
+      padding: 32px;
+      margin: 40px 0;
+      border-radius: 2px;
+    }
+
+    .trace-example h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+
+    .trace-example-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      font-size: 12px;
+    }
+
+    .trace-example-item {
+      padding: 12px;
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 2px;
+    }
+
+    .trace-example-label {
+      color: #999;
+      font-size: 10px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .trace-example-value {
+      font-weight: 600;
+      color: #333;
+    }
+
+    @media (max-width: 1200px) {
+      .trace-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .trace-hero {
+        padding: 60px 20px;
+      }
+
+      .trace-hero h1 {
+        font-size: 32px;
+      }
+
+      .trace-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trace-step {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .trace-example-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">MatchaBack</a>
+
+      <div style="display:flex; align-items:center; gap:40px;">
+        <nav>
+          <a href="farms.html">Farms</a>
+          <a href="traceability.html">Traceability</a>
+          <a href="cafes.html">For Cafes</a>
+          <a href="index.html#story">Stories</a>
+          <a href="index.html#news">News</a>
+        </nav>
+
+        <div class="social-links">
+          <!-- TODO: Update with actual URLs when accounts are created -->
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" title="Follow on Instagram" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer" title="Follow on TikTok" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="trace-hero">
+    <h1>Lot-Level Traceability</h1>
+    <p>Know exactly where your matcha comes from. Every batch is documented from harvest through packaging with verifiable records you can share with your customers.</p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="section">
+
+    <!-- Why Traceability Matters -->
+    <div style="margin-bottom: 60px;">
+      <h2 class="section-title">Why Traceability Matters</h2>
+      <div class="section-subtitle">Building trust through transparency</div>
+
+      <div class="trace-grid">
+        <div class="trace-card">
+          <div class="icon">🔍</div>
+          <h3>Verify Quality</h3>
+          <p>Confirm exact harvest dates, processing methods, and storage conditions for every batch.</p>
+        </div>
+
+        <div class="trace-card">
+          <div class="icon">📢</div>
+          <h3>Tell Your Story</h3>
+          <p>Share producer stories and farm videos with customers to build deeper connections and brand loyalty.</p>
+        </div>
+
+        <div class="trace-card">
+          <div class="icon">⚖️</div>
+          <h3>Compliance</h3>
+          <p>Full documentation for regulatory requirements, supplier audits, and transparency certifications.</p>
+        </div>
+
+        <div class="trace-card">
+          <div class="icon">🔐</div>
+          <h3>Liability Protection</h3>
+          <p>Clear records in case of any quality concerns, disputes, or traceability requests from regulators.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- The MatchaBack Traceability Process -->
+    <div style="margin-bottom: 60px;">
+      <h2 class="section-title">How MatchaBack Traceability Works</h2>
+      <div class="section-subtitle">From harvest to your café</div>
+
+      <div class="trace-timeline">
+        <div class="trace-step">
+          <div class="trace-step-number">01</div>
+          <div class="trace-step-content">
+            <h4>Harvest Window Documented</h4>
+            <p>Each harvest is tracked with exact dates, weather conditions, and farming practices. You receive documentation of the harvest window (e.g., "Apr 15–22, 2026") and hand-harvest percentage.</p>
+            <div class="trace-step-details">
+              <strong>What You Get:</strong> Harvest certificate, cultivar info, shading days, yield data
+            </div>
+          </div>
+        </div>
+
+        <div class="trace-step">
+          <div class="trace-step-number">02</div>
+          <div class="trace-step-content">
+            <h4>Processing Timestamp</h4>
+            <p>Immediately after harvest, leaves are steamed, dried, and sorted. The processing date and method (stone-milled, jet, etc.) are recorded with exact timestamps.</p>
+            <div class="trace-step-details">
+              <strong>What You Get:</strong> Processing sheet with steaming time, milling method, output spec, quality grade
+            </div>
+          </div>
+        </div>
+
+        <div class="trace-step">
+          <div class="trace-step-number">03</div>
+          <div class="trace-step-content">
+            <h4>Storage & Packaging</h4>
+            <p>Matcha is stored under nitrogen in cold conditions. When packaged for your order, the packing date, lot number, and best-by date are recorded.</p>
+            <div class="trace-step-details">
+              <strong>What You Get:</strong> Packing certificate with lot number (e.g., "UJ-2026-1F-03"), seal date, best-by date, storage conditions
+            </div>
+          </div>
+        </div>
+
+        <div class="trace-step">
+          <div class="trace-step-number">04</div>
+          <div class="trace-step-content">
+            <h4>Delivery to You</h4>
+            <p>Your order arrives with a complete Certificate of Traceability that includes QR code linking to full farm and batch details, producer video, and quality photos.</p>
+            <div class="trace-step-details">
+              <strong>What You Get:</strong> QR code, producer story/video link, lab analysis (when available), farm map, tasting notes, recommended recipes
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Example Lot Record -->
+    <div style="margin-bottom: 60px;">
+      <h3 class="section-title">Example Lot Record</h3>
+      <div class="section-subtitle">What a complete traceability certificate looks like</div>
+
+      <div class="trace-example">
+        <h4>Certificate of Traceability — Sample Lot</h4>
+        <div class="trace-example-row">
+          <div class="trace-example-item">
+            <div class="trace-example-label">Lot Number</div>
+            <div class="trace-example-value">UJ-2026-1F-03</div>
+          </div>
+          <div class="trace-example-item">
+            <div class="trace-example-label">Farm</div>
+            <div class="trace-example-value">Marukyu Koyamaen</div>
+          </div>
+          <div class="trace-example-item">
+            <div class="trace-example-label">Region</div>
+            <div class="trace-example-value">Uji, Kyoto</div>
+          </div>
+          <div class="trace-example-item">
+            <div class="trace-example-label">Cultivar</div>
+            <div class="trace-example-value">Yabukita</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px; border-top: 1px solid #ddd; padding-top: 20px;">
+          <h5 style="font-size: 12px; font-weight: 600; margin-bottom: 12px; letter-spacing: 1px; color: #333;">HARVEST</h5>
+          <div class="trace-example-row">
+            <div class="trace-example-item">
+              <div class="trace-example-label">Harvest Window</div>
+              <div class="trace-example-value">Apr 15–22, 2026</div>
+            </div>
+            <div class="trace-example-item">
+              <div class="trace-example-label">Shading Days</div>
+              <div class="trace-example-value">30 days</div>
+            </div>
+            <div class="trace-example-item">
+              <div class="trace-example-label">Hand Harvest %</div>
+              <div class="trace-example-value">60%</div>
+            </div>
+            <div class="trace-example-item">
+              <div class="trace-example-label">Weather Notes</div>
+              <div class="trace-example-value">Ideal conditions, light rain</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px; border-top: 1px solid #ddd; padding-top: 20px;">
+          <h5 style="font-size: 12px; font-weight: 600; margin-bottom: 12px; letter-spacing: 1px; color: #333;">PROCESSING</h5>
+          <div class="trace-example-row">
+            <div class="trace-example-item">
+              <div class="trace-example-label">Steaming Time</div>
+              <div class="trace-example-value">18 seconds</div>
+            </div>
+            <div class="trace-example-item">
+              <div class="trace-example-label">Milling Method</div>
+              <div class="trace-example-value">Stone (traditional)</div>
+            </div>
+            <div class="trace-example-item">
+              <div class="trace-example-label">Processing Date</div>
+              <div class="trace-example-value">Apr 23, 2026</div>
+            </div>
+            <div class="trace-example-item">
+              <div class="trace-example-label">Grind Size</div>
+              <div class="trace-example-value">Ultra-fine (< 8 microns)</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px; border-top: 1px solid #ddd; padding-top: 20px;">
+          <h5 style="font-size: 12px; font-weight: 600; margin-bottom: 12px; letter-spacing: 1px; color: #333;">STORAGE & PACKAGING</h5>
+          <div class="trace-example-row">
+            <div class="trace-example-item">
+              <div class="trace-example-label">Storage Method</div>
+              <div class="trace-example-value">N₂ + Cold (4°C)</div>
+            </div>
+            <div class="trace-example-item">
+              <div class="trace-example-label">Pack Date</div>
+              <div class="trace-example-value">May 10, 2026</div>
+            </div>
+            <div class="trace-example-item">
+              <div class="trace-example-label">Best By</div>
+              <div class="trace-example-value">May 2027</div>
+            </div>
+            <div class="trace-example-item">
+              <div class="trace-example-label">Qty in Lot</div>
+              <div class="trace-example-value">20 kg</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sharing Traceability with Customers -->
+    <div style="margin-bottom: 60px; background: #f5f5f5; padding: 40px;">
+      <h3 style="font-size: 24px; font-family: 'Crimson Text', serif; font-weight: 400; margin-bottom: 12px; letter-spacing: 2px;">
+        Share the Story with Your Customers
+      </h3>
+      <p style="font-size: 13px; color: #666; line-height: 1.8; margin-bottom: 20px;">
+        Every Certificate of Traceability includes a QR code that links to:
+      </p>
+      <ul style="font-size: 13px; color: #666; line-height: 2; margin-left: 20px;">
+        <li><strong>Producer Video:</strong> Meet the farmers behind your matcha and hear their story directly.</li>
+        <li><strong>Farm Photos:</strong> See the tea fields, processing methods, and storage practices.</li>
+        <li><strong>Lab Analysis:</strong> Chlorophyll content, amino acid profile, and quality testing results (when available).</li>
+        <li><strong>Recipes & Pairings:</strong> Recommended drinks and dishes that highlight this matcha's flavor profile.</li>
+        <li><strong>Sustainability Notes:</strong> Certifications, farming practices, and environmental impact.</li>
+      </ul>
+      <p style="font-size: 13px; color: #666; line-height: 1.8; margin-top: 20px;">
+        Print it, QR-link it on your menu, or display it at your counter. Customers will love knowing exactly where their matcha comes from.
+      </p>
+    </div>
+
+    <!-- Common Questions -->
+    <div style="margin-bottom: 60px;">
+      <h3 class="section-title">Traceability FAQs</h3>
+
+      <div style="margin-top: 40px; max-width: 800px;">
+        <div style="margin-bottom: 24px;">
+          <div style="font-size: 14px; font-weight: 600; margin-bottom: 8px; letter-spacing: 0.5px;">
+            Q: How can I verify the authenticity of the traceability records?
+          </div>
+          <div style="font-size: 13px; color: #666; line-height: 1.8;">
+            A: All records are linked to the farm's official certifications and backed by video documentation. Each QR code is unique and timestamped. You can directly contact the farm to verify any lot details.
+          </div>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <div style="font-size: 14px; font-weight: 600; margin-bottom: 8px; letter-spacing: 0.5px;">
+            Q: What if I need additional traceability documents for regulatory compliance?
+          </div>
+          <div style="font-size: 13px; color: #666; line-height: 1.8;">
+            A: Contact us with your specific requirements. We can provide COAs (Certificates of Analysis), food safety certifications, and other compliance documents as needed.
+          </div>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <div style="font-size: 14px; font-weight: 600; margin-bottom: 8px; letter-spacing: 0.5px;">
+            Q: Can I see traceability data for past orders?
+          </div>
+          <div style="font-size: 13px; color: #666; line-height: 1.8;">
+            A: Yes. We maintain a complete archive of all orders and their associated traceability records for at least 3 years. Access your order history anytime via your account.
+          </div>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <div style="font-size: 14px; font-weight: 600; margin-bottom: 8px; letter-spacing: 0.5px;">
+            Q: Do you support other traceability standards (e.g., blockchain, third-party audits)?
+          </div>
+          <div style="font-size: 13px; color: #666; line-height: 1.8;">
+            A: Currently, we use traditional documentation with digital verification via QR codes. We're exploring blockchain and third-party certification partnerships for future releases. Let us know if this is important to your business.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align: center; padding: 80px 0;">
+      <h3 style="font-size: 32px; font-family: 'Crimson Text', serif; font-weight: 400; margin-bottom: 20px; letter-spacing: 2px;">
+        Ready to Experience Transparency?
+      </h3>
+      <p style="font-size: 14px; color: #666; margin-bottom: 24px;">Request samples of our traced matcha and see the difference for yourself.</p>
+      <a href="cafes.html#samples" class="hero-cta">Request Samples</a>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>MatchaBack</h4>
+        <a href="#">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="footer-section">
+        <h4>For Cafes</h4>
+        <a href="cafes.html">Wholesale Pricing</a>
+        <a href="cafes.html#samples">Request Samples</a>
+        <a href="cafes.html">Barista Training</a>
+      </div>
+      <div class="footer-section">
+        <h4>Company</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Shipping Info</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 MatchaBack Inc. All rights reserved.<br>
+      <span style="color: #666;">Connecting cafes directly with Japanese tea farms.</span>
+    </div>
+  </footer>
+
+</body>
+</html>
