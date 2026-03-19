@@ -545,7 +545,7 @@ section[id] {
   }
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   #story .story-founder {
     grid-template-columns: minmax(220px, 300px) 1fr;
     gap: 22px;
@@ -887,10 +887,28 @@ footer {
 
   .hero {
     margin-top: 60px;
+    min-height: 88svh;
+  }
+
+  .hero-bg {
+    object-position: center center;
   }
 
   .hero-content h1 {
-    font-size: 36px;
+    font-size: 34px;
+    line-height: 1.25;
+    margin-bottom: 18px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    line-height: 1.75;
+    margin-bottom: 28px;
   }
 
   .section {
