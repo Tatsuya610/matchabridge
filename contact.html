@@ -15,191 +15,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- External CSS -->
-  <link rel="stylesheet" href="styles.css">
-
-  <style>
-    .contact-hero {
-      background: linear-gradient(135deg, #f5f3f0 0%, #faf9f6 100%);
-      padding: 100px 40px;
-      text-align: center;
-    }
-
-    .contact-hero h1 {
-      font-size: 48px;
-      font-family: 'Crimson Text', serif;
-      font-weight: 400;
-      margin-bottom: 20px;
-      letter-spacing: 2px;
-    }
-
-    .contact-hero p {
-      font-size: 16px;
-      color: #666;
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.8;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      margin: 60px 0;
-    }
-
-    .contact-option {
-      text-align: center;
-    }
-
-    .contact-option h3 {
-      font-size: 18px;
-      font-family: 'Crimson Text', serif;
-      font-weight: 400;
-      margin-bottom: 12px;
-      letter-spacing: 2px;
-    }
-
-    .contact-option p {
-      font-size: 13px;
-      color: #666;
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-
-    .contact-option a {
-      color: #1a1a1a;
-      text-decoration: none;
-      font-size: 12px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 4px;
-      transition: all 0.3s;
-    }
-
-    .contact-option a:hover {
-      color: #666;
-      border-bottom-color: #666;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-    }
-
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      padding: 12px 16px;
-      border: 1px solid #ddd;
-      border-radius: 0;
-      font-size: 14px;
-      font-family: 'Noto Sans JP', sans-serif;
-      background: white;
-      transition: all 0.3s;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: #1a1a1a;
-      box-shadow: 0 0 0 2px rgba(26, 26, 26, 0.1);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 140px;
-    }
-
-    .form-submit {
-      background: #1a1a1a;
-      color: white;
-      padding: 14px 40px;
-      border: none;
-      text-decoration: none;
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.3s;
-      font-family: 'Noto Sans JP', sans-serif;
-    }
-
-    .form-submit:hover {
-      background: #333;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    @media (max-width: 768px) {
-      .contact-hero {
-        padding: 60px 20px;
-      }
-
-      .contact-hero h1 {
-        font-size: 32px;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        margin: 40px 0;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css?v=20260319-contact-flow1">
 </head>
 
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="header-container">
-      <a href="index.html" class="logo">Matcha Bridge</a>
-
-      <div style="display:flex; align-items:center; gap:40px;">
-        <nav>
-          <a href="farms.html">Farms</a>
-          <a href="traceability.html">Traceability</a>
-          <a href="cafes.html">For Cafes</a>
-          <a href="index.html#story">Stories</a>
-          <a href="index.html#news">News</a>
-        </nav>
-
-        <div class="social-links">
-          <!-- TODO: Update with actual URLs when accounts are created -->
-          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" title="Follow on Instagram" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer" title="Follow on TikTok" aria-label="TikTok">
-            <i class="fab fa-tiktok"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
+  <div id="site-header"></div>
 
   <!-- Hero Section -->
   <div class="contact-hero">
@@ -213,21 +38,87 @@
     <!-- Contact Options -->
     <div class="contact-grid">
       <div class="contact-option">
-        <h3>☕ For Cafes</h3>
-        <p>Interested in wholesale pricing, samples, or barista training?</p>
-        <a href="cafes.html#samples">Request Samples →</a>
+        <div class="contact-option-icon"><i class="fa-solid fa-mug-saucer"></i></div>
+        <h3>For Cafes</h3>
+        <p>Interested in wholesale pricing, onboarding, or barista training?</p>
+        <a href="#wholesale-inquiry">Start Cafe Inquiry →</a>
       </div>
 
       <div class="contact-option">
-        <h3>🌾 Partner Farms</h3>
+        <div class="contact-option-icon"><i class="fa-solid fa-seedling"></i></div>
+        <h3>For Partner Farms</h3>
         <p>Interested in becoming a Matcha Bridge partner farm or distributor?</p>
-        <a href="#farm-inquiry">Farm Inquiry Form →</a>
+        <a href="#farm-inquiry">Start Farm Inquiry →</a>
       </div>
 
       <div class="contact-option">
-        <h3>💼 General Inquiry</h3>
+        <div class="contact-option-icon"><i class="fa-solid fa-comments"></i></div>
+        <h3>General Inquiry</h3>
         <p>Press, partnerships, or general questions about Matcha Bridge?</p>
-        <a href="#general-inquiry">Send Message →</a>
+        <a href="#general-inquiry">Start General Inquiry →</a>
+      </div>
+    </div>
+
+    <!-- Cafe Wholesale Inquiry Form -->
+    <div id="wholesale-inquiry" style="margin-bottom: 80px;">
+      <h2 class="section-title">Cafe Wholesale Inquiry</h2>
+      <div class="section-subtitle">Tell us about your cafe and menu goals</div>
+
+      <div style="max-width: 600px; margin-top: 40px; background: #f5f5f5; padding: 40px;">
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Contact Name *</label>
+              <input type="text" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label>Email *</label>
+              <input type="email" placeholder="your@email.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Cafe / Company Name *</label>
+              <input type="text" placeholder="Your cafe name" required>
+            </div>
+            <div class="form-group">
+              <label>Location *</label>
+              <input type="text" placeholder="City, Country" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Estimated Monthly Usage *</label>
+              <select required>
+                <option value="">-- Select volume --</option>
+                <option value="under-2kg">Under 2kg</option>
+                <option value="2-5kg">2kg - 5kg</option>
+                <option value="5-10kg">5kg - 10kg</option>
+                <option value="10kg-plus">10kg+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Primary Use *</label>
+              <select required>
+                <option value="">-- Select primary use --</option>
+                <option value="latte">Matcha Latte</option>
+                <option value="traditional">Traditional Matcha</option>
+                <option value="dessert">Dessert / Bakery</option>
+                <option value="mixed">Mixed Menu</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>What Support Do You Need? *</label>
+            <textarea placeholder="Tell us your menu goals, current challenges, and what support you need..." required></textarea>
+          </div>
+
+          <button type="submit" class="form-submit">Submit Cafe Inquiry</button>
+          <p style="font-size: 11px; color: #999; margin-top: 12px; letter-spacing: 0.5px;">We'll review your inquiry and follow up within 2 business days.</p>
+        </form>
       </div>
     </div>
 
@@ -321,48 +212,45 @@
       </div>
     </div>
 
-    <!-- FAQ / Additional Info -->
-    <div style="margin-bottom: 60px; background: #f5f5f5; padding: 40px; border-radius: 2px;">
-      <h3 style="font-size: 18px; font-family: 'Crimson Text', serif; font-weight: 400; margin-bottom: 12px; letter-spacing: 2px;">
-        Response Times
-      </h3>
-      <ul style="font-size: 13px; color: #666; line-height: 2; margin-left: 20px;">
-        <li><strong>Café Sample Requests:</strong> 2 business days</li>
-        <li><strong>Farm Partnership Inquiries:</strong> 5 business days</li>
-        <li><strong>General Inquiries:</strong> 3 business days</li>
-        <li><strong>Urgent Matters:</strong> Contact us directly at partner@matchaback.jp</li>
-      </ul>
-    </div>
-
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-section">
-        <h4>Matcha Bridge</h4>
-        <a href="#">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="#">Blog</a>
-      </div>
-      <div class="footer-section">
-        <h4>For Cafes</h4>
-        <a href="cafes.html">Wholesale Pricing</a>
-        <a href="cafes.html#samples">Request Samples</a>
-        <a href="cafes.html">Barista Training</a>
-      </div>
-      <div class="footer-section">
-        <h4>Company</h4>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Shipping Info</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2026 Matcha Bridge Inc. All rights reserved.<br>
-      <span style="color: #666;">Connecting cafes directly with Japanese tea farms.</span>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
+
+  <script src="scripts/components.js?v=20260319-header-unify1"></script>
+
+  <script>
+    (function () {
+      function getHeaderOffset() {
+        var header = document.querySelector('header');
+        return (header ? header.offsetHeight : 0) + 16;
+      }
+
+      function scrollToHash(hash, smooth) {
+        var target = document.querySelector(hash);
+        if (!target) return;
+        var y = target.getBoundingClientRect().top + window.pageYOffset - getHeaderOffset();
+        window.scrollTo({ top: Math.max(0, y), behavior: smooth ? 'smooth' : 'auto' });
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          var hash = link.getAttribute('href');
+          if (!hash || hash === '#') return;
+          var target = document.querySelector(hash);
+          if (!target) return;
+          e.preventDefault();
+          history.pushState(null, '', hash);
+          scrollToHash(hash, true);
+        });
+      });
+
+      if (window.location.hash) {
+        window.requestAnimationFrame(function () {
+          scrollToHash(window.location.hash, false);
+        });
+      }
+    })();
+  </script>
 
 </body>
 </html>

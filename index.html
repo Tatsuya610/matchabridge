@@ -14,13 +14,12 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Elsie&family=Crimson+Text:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- ✅ External CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260319-hero-playlist1">
 </head>
 
 <body>
@@ -28,20 +27,17 @@
   <!-- Header -->
   <header>
     <div class="header-container">
-      <a href="index.html" class="logo">Matcha Bridge</a>
+      <a href="index.html" class="logo" aria-label="Matcha Bridge home"><img src="assets/logo.png" alt="Matcha Bridge" loading="eager" decoding="async"></a>
 
       <div style="display:flex; align-items:center; gap:40px;">
         <nav>
-          <a href="farms.html">Farms</a>
-          <a href="traceability.html">Traceability</a>
-          <a href="cafes.html">For Cafes</a>
           <a href="#story">Stories</a>
-          <a href="#news">News</a>
+          <a href="#why">Why Us</a>
         </nav>
 
         <div class="social-links">
           <!-- TODO: Update with actual URLs when accounts are created -->
-          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" title="Follow on Instagram" aria-label="Instagram">
+          <a href="https://instagram.com/matcha_bridge" target="_blank" rel="noopener noreferrer" title="Follow on Instagram" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
           <a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer" title="Follow on TikTok" aria-label="TikTok">
@@ -55,35 +51,18 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <!-- Put your hero video file under /assets if you want -->
-    <video class="hero-bg" autoplay muted loop playsinline data-src="assets/matcha-hero-new.mp4"></video>
+    <video class="hero-bg is-visible" autoplay muted playsinline preload="auto"></video>
+    <video class="hero-bg" autoplay muted playsinline preload="auto"></video>
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
       <h1>Farm-Direct<br>Japanese Matcha</h1>
       <p>
-        Verified partner farms, lot-level traceability, and cafe-ready consistency —
-        premium matcha straight from the source.
+        Lot-verified origin, multi-farm supply network, and café-ready consistency — so you can focus on the cup, not the supply chain.
       </p>
 
       <div class="hero-actions">
-        <a href="cafes.html#samples" class="hero-cta">Wholesale Access</a>
-        <a href="farms.html" class="hero-cta secondary">Explore Farms</a>
-      </div>
-
-      <div class="trust-row">
-        <div class="trust-item">
-          <b>Lot-Level Traceability</b>
-          Harvest window, packaging date, and documentation by partner.
-        </div>
-        <div class="trust-item">
-          <b>Farm Video Verification</b>
-          Producer voice and on-site footage you can share with customers.
-        </div>
-        <div class="trust-item">
-          <b>Cafe-Ready Consistency</b>
-          Guidance for latte texture, color stability, and recipes.
-        </div>
+        <a href="contact.html#wholesale-inquiry" class="hero-cta">Wholesale Inquiry</a>
       </div>
 
     </div>
@@ -92,60 +71,61 @@
   <!-- Stories Section -->
   <section class="section" id="story">
     <div class="section-title">Our Stories</div>
-    <div class="section-subtitle">The Craft Behind Every Cup</div>
+
+    <div class="story-founder" id="founder-message">
+      <div class="story-founder-media">
+        <img src="assets/farmer-hand-pick.png" alt="Hand-picking tea leaves at a partner farm in Japan" loading="lazy" decoding="async">
+      </div>
+      <div class="story-founder-content">
+        <div class="story-founder-tag">Founder's Message</div>
+        <blockquote>
+          "Every bag of matcha carries the story of a farm family that has spent generations perfecting something most people will never see. Our job is to make sure <em>cafes can tell that story</em> - and never run out of it."
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="story-matters-head">Why It Matters</div>
+    <p class="story-matters-sub">Three structural risks that can weaken cafe matcha programs.</p>
 
     <div class="story-grid">
       <div class="story-card">
-        <div class="story-image">🌑</div>
+        <div class="story-image">01</div>
         <div class="story-content">
-          <h3>Shade Growing</h3>
+          <div class="story-tag">Market Reality</div>
+          <h3>"Sourced from Japan" Isn't Good Enough</h3>
           <p>
-            Weeks before harvest, tea bushes are shielded from direct sunlight,
-            increasing chlorophyll and L-theanine — the source of matcha's umami and vibrant color.
+            Most U.S. distributors cannot confirm region, farm, or harvest year. "Sourced from Japan" alone no longer answers customer questions about quality, transparency, and sourcing ethics.
           </p>
-          <a href="#" class="story-link">Read More</a>
         </div>
       </div>
 
       <div class="story-card">
-        <div class="story-image">🤲</div>
+        <div class="story-image">02</div>
         <div class="story-content">
-          <h3>Hand-Picking</h3>
+          <div class="story-tag">Supply Risk</div>
+          <h3>Why Your Supply Is More Fragile Than You Think</h3>
           <p>
-            Only the youngest tender leaves are selected by skilled pickers,
-            preserving sweetness and a clean finish.
+            Japanese tencha prices rose sharply between 2023 and 2025 while producer numbers continue to decline. Many specialty cafes rely on a single supplier, making stockouts and menu instability more likely.
           </p>
-          <a href="#" class="story-link">Read More</a>
         </div>
       </div>
 
       <div class="story-card">
-        <div class="story-image">♨️</div>
+        <div class="story-image">03</div>
         <div class="story-content">
-          <h3>Steaming</h3>
+          <div class="story-tag">Execution Gap</div>
+          <h3>Most Supply Models Ignore Real Cafe Operations</h3>
           <p>
-            Within hours of harvest, leaves are steamed briefly to halt oxidation
-            and preserve the vivid emerald color.
+            Many offers focus on commodity volume, not cafe workflow. Teams still struggle with grade selection, recipe consistency, lead-time visibility, and customer-facing origin communication.
           </p>
-          <a href="#" class="story-link">Read More</a>
-        </div>
-      </div>
-
-      <div class="story-card">
-        <div class="story-image">⚙️</div>
-        <div class="story-content">
-          <h3>Stone Grinding</h3>
-          <p>
-            Tencha is ground between carved granite mills — producing small amounts per hour
-            and a uniquely smooth mouthfeel.
-          </p>
-          <a href="#" class="story-link">Read More</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Farms Section (now routes to dynamic farms.html) -->
+  <!-- TEMP HIDDEN SECTION: Partner Farms -->
+  <!--
+  To restore this section later, remove this comment wrapper.
   <section class="section" id="farms">
     <div class="section-title">Partner Farms</div>
     <div class="section-subtitle">Explore active partners, profiles, and traceability</div>
@@ -173,6 +153,55 @@
           <a href="traceability.html" class="story-link">View Traceability</a>
         </div>
       </div>
+    </div>
+  </section>
+  -->
+
+  <!-- Why Us Section -->
+  <section class="section" id="why">
+    <div class="section-title">Why Us</div>
+    <div class="section-subtitle">What we commit to for every café partner</div>
+
+    <div class="why-grid">
+      <article class="why-card">
+        <div class="why-icon"><i class="fa-solid fa-leaf"></i></div>
+        <h3>Full Origin Visibility</h3>
+        <p>
+          Every lot is traceable to a specific farm, harvest window, and region in Japan.
+          Your team gets the context to say — with confidence — exactly what's in the cup.
+        </p>
+      </article>
+
+      <article class="why-card">
+        <div class="why-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+        <h3>You Won't Run Out</h3>
+        <p>
+          We source across multiple partner farms, so a single harvest shortfall doesn't
+          become your stockout. Stable supply planning starts from your first order.
+        </p>
+      </article>
+
+      <article class="why-card">
+        <div class="why-icon"><i class="fa-solid fa-sliders"></i></div>
+        <h3>Consistent In-Cup Performance</h3>
+        <p>
+          We provide grade guidance, latte performance benchmarks, and recipe support
+          so quality stays the same across shifts, seasons, and staff changes.
+        </p>
+      </article>
+
+      <article class="why-card">
+        <div class="why-icon"><i class="fa-solid fa-handshake"></i></div>
+        <h3>We Grow With You</h3>
+        <p>
+          Beyond wholesale: barista training, POP cards, and origin storytelling tools.
+          The more embedded we become in your success, the harder we are to replace.
+        </p>
+      </article>
+    </div>
+
+    <div class="why-cta-wrap">
+      <a href="contact.html#wholesale-inquiry" class="hero-cta">Start Wholesale Inquiry</a>
     </div>
   </section>
 
@@ -232,75 +261,78 @@
     </div>
   </section>
 
-  <!-- News -->
-  <section class="section" id="news">
-    <div class="section-title">News</div>
-    <div class="section-subtitle">Latest Updates</div>
+  <div id="site-footer"></div>
 
-    <div class="topics-list">
-      <div class="topic-item">
-        <div class="topic-date">2026.02.17</div>
-        <div class="topic-title">
-          <a href="#">Private Preview Launch — Matcha Bridge Introduces Farm-Direct Matcha for Cafes</a>
-        </div>
-      </div>
-      <div class="topic-item">
-        <div class="topic-date">2026.02.15</div>
-        <div class="topic-title">
-          <a href="#">New at Matcha Bridge: Four Partner Farms Now Available</a>
-        </div>
-      </div>
-      <div class="topic-item">
-        <div class="topic-date">2026.02.10</div>
-        <div class="topic-title">
-          <a href="#">Traceability Model — Lot Records from Farm to Cup</a>
-        </div>
-      </div>
-      <div class="topic-item">
-        <div class="topic-date">2026.02.05</div>
-        <div class="topic-title">
-          <a href="#">Behind the Scenes: The Matcha Creation Process</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-section">
-        <h4>Matcha Bridge</h4>
-        <a href="#">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="#">Blog</a>
-      </div>
-
-      <div class="footer-section">
-        <h4>For Cafes</h4>
-        <a href="cafes.html">Wholesale Pricing</a>
-        <a href="cafes.html#samples">Request Samples</a>
-        <a href="#">Barista Training</a>
-      </div>
-
-      <div class="footer-section">
-        <h4>Company</h4>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Shipping Info</a>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      &copy; 2026 Matcha Bridge Inc. All rights reserved.<br>
-      <span style="color:#666;">Connecting cafes directly with Japanese tea farms.</span>
-    </div>
-  </footer>
+  <script src="scripts/components.js?v=20260319-header-unify1"></script>
 
   <script>
-    // ===== VIDEO PLAYBACK =====
-    const heroVideo = document.querySelector('.hero-bg');
-    if (heroVideo && heroVideo.dataset.src) {
-      heroVideo.src = heroVideo.dataset.src;
+    // ===== HERO VIDEO PLAYLIST (crossfade) =====
+    const heroLayers = Array.from(document.querySelectorAll('.hero-bg'));
+    const heroPlaylist = [
+      { src: 'assets/matcha-hero-new.mp4', duration: 4000 },
+      { src: 'assets/shading.mp4', duration: 4000 },
+      { src: 'assets/hand-picking.mp4', duration: 3000 },
+      { src: 'assets/stone-grinding.mp4', duration: 4000 },
+      { src: 'assets/match-late.mp4', duration: 3000 }
+    ];
+
+    const fadeMs = 1000;
+    let activeLayer = 0;
+    let activeIndex = 0;
+    let heroTimer = null;
+
+    function setVideoSource(video, src) {
+      if (video.dataset.currentSrc === src) return;
+      video.src = src;
+      video.dataset.currentSrc = src;
+      video.load();
+    }
+
+    function playVideo(video) {
+      video.currentTime = 0;
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {});
+      }
+    }
+
+    function scheduleNextHeroSwap() {
+      clearTimeout(heroTimer);
+      const now = heroPlaylist[activeIndex];
+      heroTimer = setTimeout(swapHeroVideo, now.duration);
+    }
+
+    function swapHeroVideo() {
+      if (heroLayers.length < 2 || heroPlaylist.length === 0) return;
+
+      const nextIndex = (activeIndex + 1) % heroPlaylist.length;
+      const currentVideo = heroLayers[activeLayer];
+      const nextLayer = activeLayer === 0 ? 1 : 0;
+      const nextVideo = heroLayers[nextLayer];
+
+      setVideoSource(nextVideo, heroPlaylist[nextIndex].src);
+      playVideo(nextVideo);
+
+      nextVideo.classList.add('is-visible');
+      currentVideo.classList.remove('is-visible');
+
+      setTimeout(() => {
+        currentVideo.pause();
+      }, fadeMs + 120);
+
+      activeLayer = nextLayer;
+      activeIndex = nextIndex;
+      scheduleNextHeroSwap();
+    }
+
+    if (heroLayers.length >= 2 && heroPlaylist.length > 0) {
+      setVideoSource(heroLayers[0], heroPlaylist[0].src);
+      playVideo(heroLayers[0]);
+      heroLayers[0].classList.add('is-visible');
+
+      const preloadIndex = heroPlaylist.length > 1 ? 1 : 0;
+      setVideoSource(heroLayers[1], heroPlaylist[preloadIndex].src);
+      scheduleNextHeroSwap();
     }
 
     // ===== SMOOTH SCROLL (only for # anchors) =====

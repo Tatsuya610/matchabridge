@@ -15,151 +15,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- External CSS -->
   <link rel="stylesheet" href="styles.css">
-
-  <style>
-    .auth-wrap {
-      max-width: 520px;
-      margin: 60px auto 100px;
-      background: #f5f5f5;
-      padding: 40px;
-      border-radius: 2px;
-    }
-
-    .auth-title {
-      font-size: 28px;
-      font-family: 'Crimson Text', serif;
-      font-weight: 400;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-    }
-
-    .auth-sub {
-      font-size: 13px;
-      color: #666;
-      line-height: 1.8;
-      margin-bottom: 24px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 12px 16px;
-      border: 1px solid #ddd;
-      border-radius: 0;
-      font-size: 14px;
-      font-family: 'Noto Sans JP', sans-serif;
-      background: white;
-      transition: all 0.3s;
-    }
-
-    .form-group input:focus {
-      outline: none;
-      border-color: #1a1a1a;
-      box-shadow: 0 0 0 2px rgba(26, 26, 26, 0.1);
-    }
-
-    .form-submit {
-      background: #1a1a1a;
-      color: white;
-      padding: 14px 40px;
-      border: none;
-      text-decoration: none;
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.3s;
-      font-family: 'Noto Sans JP', sans-serif;
-    }
-
-    .form-submit:hover {
-      background: #333;
-    }
-
-    .hero-section-cafes {
-      background: linear-gradient(135deg, #f5f3f0 0%, #faf9f6 100%);
-      padding: 100px 40px;
-      text-align: center;
-    }
-
-    .hero-section-cafes h1 {
-      font-size: 42px;
-      font-family: 'Crimson Text', serif;
-      font-weight: 400;
-      margin-bottom: 16px;
-      letter-spacing: 2px;
-    }
-
-    .hero-section-cafes p {
-      font-size: 14px;
-      color: #666;
-      max-width: 600px;
-      margin: 0 auto 24px;
-      line-height: 1.8;
-    }
-
-    @media (max-width: 768px) {
-      .hero-section-cafes {
-        padding: 60px 20px;
-      }
-
-      .hero-section-cafes h1 {
-        font-size: 30px;
-      }
-
-      .auth-wrap {
-        margin: 40px 16px 80px;
-        padding: 28px;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="header-container">
-      <a href="index.html" class="logo">Matcha Bridge</a>
-
-      <div style="display:flex; align-items:center; gap:40px;">
-        <nav>
-          <a href="farms.html">Farms</a>
-          <a href="traceability.html">Traceability</a>
-          <a href="cafes.html">For Cafes</a>
-          <a href="index.html#story">Stories</a>
-          <a href="index.html#news">News</a>
-        </nav>
-
-        <div class="social-links">
-          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" title="Follow on Instagram" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer" title="Follow on TikTok" aria-label="TikTok">
-            <i class="fab fa-tiktok"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
+  <div id="site-header"></div>
 
   <!-- Hero -->
   <div class="hero-section-cafes">
@@ -185,38 +50,14 @@
       </form>
 
       <p style="font-size: 12px; color: #666; margin-top: 18px;">
-        New here? <a href="wholesale-inquiry.html" style="color: #1a1a1a; text-decoration: underline;">Start a wholesale inquiry</a>.
+        New here? <a href="contact.html#wholesale-inquiry" style="color: #1a1a1a; text-decoration: underline;">Start a wholesale inquiry</a>.
       </p>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-section">
-        <h4>Matcha Bridge</h4>
-        <a href="#">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="#">Blog</a>
-      </div>
-      <div class="footer-section">
-        <h4>For Cafes</h4>
-        <a href="signin.html">Sign in</a>
-        <a href="wholesale-inquiry.html">Wholesale Inquiry</a>
-        <a href="cafes.html">Barista Training</a>
-      </div>
-      <div class="footer-section">
-        <h4>Company</h4>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Shipping Info</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2026 Matcha Bridge Inc. All rights reserved.<br>
-      <span style="color: #666;">Connecting cafes directly with Japanese tea farms.</span>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
+
+  <script src="scripts/components.js?v=20260319-header-unify1"></script>
 
 </body>
 </html>

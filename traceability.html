@@ -15,217 +15,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- External CSS -->
   <link rel="stylesheet" href="styles.css">
-
-  <style>
-    .trace-hero {
-      background: linear-gradient(135deg, #2d5016 0%, #4a7c29 100%);
-      color: white;
-      padding: 100px 40px;
-      text-align: center;
-    }
-
-    .trace-hero h1 {
-      font-size: 48px;
-      font-family: 'Crimson Text', serif;
-      font-weight: 400;
-      margin-bottom: 20px;
-      letter-spacing: 2px;
-    }
-
-    .trace-hero p {
-      font-size: 16px;
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.8;
-      opacity: 0.9;
-    }
-
-    .trace-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin: 60px 0;
-    }
-
-    .trace-card {
-      background: white;
-      padding: 32px;
-      border: 1px solid #eee;
-      box-shadow: 0 2px 8px rgba(0,0,0,.04);
-      text-align: center;
-    }
-
-    .trace-card .icon {
-      font-size: 48px;
-      margin-bottom: 16px;
-    }
-
-    .trace-card h3 {
-      font-size: 16px;
-      font-family: 'Crimson Text', serif;
-      font-weight: 400;
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-    }
-
-    .trace-card p {
-      font-size: 12px;
-      color: #666;
-      line-height: 1.8;
-    }
-
-    .trace-timeline {
-      position: relative;
-      margin: 60px 0;
-    }
-
-    .trace-step {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 40px;
-      margin-bottom: 40px;
-      align-items: start;
-    }
-
-    .trace-step-number {
-      font-size: 48px;
-      font-family: 'Crimson Text', serif;
-      font-weight: 400;
-      color: #2d5016;
-      letter-spacing: 2px;
-    }
-
-    .trace-step-content h4 {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-    }
-
-    .trace-step-content p {
-      font-size: 13px;
-      color: #666;
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-
-    .trace-step-details {
-      background: #f5f5f5;
-      padding: 16px;
-      font-size: 12px;
-      color: #333;
-      line-height: 1.8;
-      border-radius: 2px;
-      margin-top: 16px;
-    }
-
-    .trace-example {
-      background: #faf9f6;
-      border: 2px dashed #ddd;
-      padding: 32px;
-      margin: 40px 0;
-      border-radius: 2px;
-    }
-
-    .trace-example h4 {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 16px;
-      letter-spacing: 1px;
-    }
-
-    .trace-example-row {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      font-size: 12px;
-    }
-
-    .trace-example-item {
-      padding: 12px;
-      background: white;
-      border: 1px solid #eee;
-      border-radius: 2px;
-    }
-
-    .trace-example-label {
-      color: #999;
-      font-size: 10px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-
-    .trace-example-value {
-      font-weight: 600;
-      color: #333;
-    }
-
-    @media (max-width: 1200px) {
-      .trace-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .trace-hero {
-        padding: 60px 20px;
-      }
-
-      .trace-hero h1 {
-        font-size: 32px;
-      }
-
-      .trace-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .trace-step {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .trace-example-row {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="header-container">
-      <a href="index.html" class="logo">Matcha Bridge</a>
-
-      <div style="display:flex; align-items:center; gap:40px;">
-        <nav>
-          <a href="farms.html">Farms</a>
-          <a href="traceability.html">Traceability</a>
-          <a href="cafes.html">For Cafes</a>
-          <a href="index.html#story">Stories</a>
-          <a href="index.html#news">News</a>
-        </nav>
-
-        <div class="social-links">
-          <!-- TODO: Update with actual URLs when accounts are created -->
-          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" title="Follow on Instagram" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer" title="Follow on TikTok" aria-label="TikTok">
-            <i class="fab fa-tiktok"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
+  <div id="site-header"></div>
 
   <!-- Hero Section -->
   <div class="trace-hero">
@@ -488,33 +287,9 @@
 
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-section">
-        <h4>Matcha Bridge</h4>
-        <a href="#">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="#">Blog</a>
-      </div>
-      <div class="footer-section">
-        <h4>For Cafes</h4>
-        <a href="cafes.html">Wholesale Pricing</a>
-        <a href="cafes.html#samples">Request Samples</a>
-        <a href="cafes.html">Barista Training</a>
-      </div>
-      <div class="footer-section">
-        <h4>Company</h4>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Shipping Info</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2026 Matcha Bridge Inc. All rights reserved.<br>
-      <span style="color: #666;">Connecting cafes directly with Japanese tea farms.</span>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
+
+  <script src="scripts/components.js?v=20260319-header-unify1"></script>
 
 </body>
 </html>
