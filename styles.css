@@ -1352,6 +1352,31 @@ footer {
   border-bottom-color: #666;
 }
 
+.inquiry-section .section-title,
+.inquiry-section .section-subtitle {
+  text-align: center;
+}
+
+.inquiry-section .inquiry-form-wrap {
+  max-width: 600px;
+  margin: 40px auto 0;
+  background: #f5f5f5;
+  padding: 40px;
+}
+
+.inquiry-section form {
+  text-align: left;
+}
+
+.inquiry-section .form-submit {
+  display: block;
+  margin: 0 auto;
+}
+
+.inquiry-section form > p {
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .contact-hero {
     margin-top: 64px;
@@ -1377,6 +1402,10 @@ footer {
     height: 74px;
     font-size: 38px;
     border-radius: 18px;
+  }
+
+  .inquiry-section .inquiry-form-wrap {
+    padding: 24px 20px;
   }
 }
 
