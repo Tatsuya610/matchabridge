@@ -35,7 +35,7 @@ cat ~/.ssh/id_ed25519.pub
 接続確認：
 ```bash
 ssh -T git@github.com
-# Hi yourusername! You've successfully authenticated...
+# Hi Tatsuya610! You've successfully authenticated...
 ```
 
 ## 🚀 GitHubへ公開する手順
@@ -44,7 +44,7 @@ ssh -T git@github.com
 
 1. GitHub.com にログイン
 2. 画面右上の「+」アイコン → 「New repository」
-3. Repository name: `matchaback`
+3. Repository name: `matchabridge`
 4. Description: `A modern web platform for connecting Japanese matcha producers with international café partners.`
 5. Visibility: **Public** を選択（オープンソースの場合）
 6. 「README file」「.gitignore」「license」は **チェックなし** にしてください
@@ -91,19 +91,19 @@ git log --oneline
 
 ```bash
 # GitHubで作成したリポジトリのURLを使用
-# ssh形式: git@github.com:yourusername/matchaback.git
-# https形式: https://github.com/yourusername/matchaback.git
+# ssh形式: git@github.com:Tatsuya610/matchabridge.git
+# https形式: https://github.com/Tatsuya610/matchabridge.git
 
 # SSH推奨（パスワード入力なし）
-git remote add origin git@github.com:yourusername/matchaback.git
+git remote add origin git@github.com:Tatsuya610/matchabridge.git
 
 # またはHTTPS（Personal Access Tokenが必要）
-# git remote add origin https://github.com/yourusername/matchaback.git
+# git remote add origin https://github.com/Tatsuya610/matchabridge.git
 
 # 確認
 git remote -v
-# origin  git@github.com:yourusername/matchaback.git (fetch)
-# origin  git@github.com:yourusername/matchaback.git (push)
+# origin  git@github.com:Tatsuya610/matchabridge.git (fetch)
+# origin  git@github.com:Tatsuya610/matchabridge.git (push)
 ```
 
 ### ステップ 5: GitHubにプッシュ
@@ -123,17 +123,35 @@ git push -u origin main
 
 ```bash
 # ブラウザで確認
-open https://github.com/yourusername/matchaback
+open https://github.com/Tatsuya610/matchabridge
 ```
 
 ## ✅ 公開確認チェックリスト
 
-- [ ] GitHubで `matchaback` リポジトリが見える
+- [ ] GitHubで `matchabridge` リポジトリが見える
 - [ ] すべてのファイルが表示されている
 - [ ] README.md が表示されている
 - [ ] CONTRIBUTING.md, TEAM_SETUP.md が表示されている
 - [ ] .gitignore が隠しファイルとして存在
 - [ ] GitHub Actions の workflows が表示されている
+
+## 🌐 GitHub Pages を docs から公開する（推奨）
+
+このリポジトリでは、公開対象を `docs/` に切り分けています。
+非公開にしたいページ（例: `farms.html` など）を公開しないため、必ず Pages の公開元を `docs` に設定してください。
+
+### 設定手順
+
+1. GitHub リポジトリを開く
+2. `Settings` → `Pages`
+3. `Build and deployment` の `Source` を **Deploy from a branch** にする
+4. Branch を **main**、Folder を **/docs** に設定
+5. `Save`
+
+### 重要
+
+- `/(root)` を選ぶと、ルート配下の HTML が公開対象になります。
+- `docs/` を選ぶと、`docs/` 配下のみが公開されます。
 
 ## 📝 README を GitHubに表示
 
@@ -150,19 +168,19 @@ head -20 README.md
 
 ```
 # メインリポジトリ
-https://github.com/yourusername/matchaback
+https://github.com/Tatsuya610/matchabridge
 
 # ファイルの表示
-https://github.com/yourusername/matchaback/blob/main/README.md
+https://github.com/Tatsuya610/matchabridge/blob/main/README.md
 
 # イシュー報告
-https://github.com/yourusername/matchaback/issues
+https://github.com/Tatsuya610/matchabridge/issues
 
 # ディスカッション
-https://github.com/yourusername/matchaback/discussions
+https://github.com/Tatsuya610/matchabridge/discussions
 
 # PR作成
-https://github.com/yourusername/matchaback/pulls
+https://github.com/Tatsuya610/matchabridge/pulls
 ```
 
 ## 🔄 公開後の更新方法
@@ -216,8 +234,8 @@ curl https://raw.githubusercontent.com/github/gitignore/main/Global/macOS.gitign
 ### README にバッジを追加（オプション）
 
 ```markdown
-[![GitHub License](https://img.shields.io/github/license/yourusername/matchaback)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/yourusername/matchaback?style=social)](https://github.com/yourusername/matchaback)
+[![GitHub License](https://img.shields.io/github/license/Tatsuya610/matchabridge)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/Tatsuya610/matchabridge?style=social)](https://github.com/Tatsuya610/matchabridge)
 ```
 
 ## ⚠️ 公開前のチェック
@@ -239,14 +257,14 @@ ssh -vT git@github.com
 # 出力を確認し、~/.ssh/authorized_keys に鍵がある確認
 
 # または HTTPS を使用
-git remote set-url origin https://github.com/yourusername/matchaback.git
+git remote set-url origin https://github.com/Tatsuya610/matchabridge.git
 ```
 
 ### ❌ "fatal: remote origin already exists"
 ```bash
 # リモートを削除して再設定
 git remote remove origin
-git remote add origin git@github.com:yourusername/matchaback.git
+git remote add origin git@github.com:Tatsuya610/matchabridge.git
 ```
 
 ### ❌ "Updates were rejected because the branch is behind"
